@@ -1,15 +1,23 @@
 <script setup>
 // import * as TablerIcons from "@tabler/icons-vue";
-import { IconInfoCircle, IconCircleX, IconAlertTriangleFilled, IconSearch, IconHome } from "@tabler/icons-vue";
+import { IconInfoCircle, IconCircleX, IconAlertTriangleFilled, IconSearch } from "@tabler/icons-vue";
 
 const props = defineProps({
-  label: {
+  to: {
     type: String,
     default: null,
   },
-  icon: {
+  rel: {
     type: String,
-    default: "",
+    default: null,
+  },
+  target: {
+    type: String,
+    default: null,
+  },
+  label: {
+    type: String,
+    default: null,
   },
   leftIcon: {
     type: String,
@@ -27,17 +35,9 @@ const props = defineProps({
     type: String,
     default: "default",
   },
-  iconOnly: {
-    type: Boolean,
-    default: false,
-  },
   disabled: {
     type: Boolean,
     default: false,
-  },
-  onClick: {
-    type: Function,
-    default: () => {},
   },
 });
 
@@ -46,7 +46,6 @@ const iconMap = {
   "icon-circle-x": IconCircleX,
   "icon-alert-triangle-filled": IconAlertTriangleFilled,
   "icon-search": IconSearch,
-  "tabler-icon tabler-icon-home": IconHome,
 };
 
 const getIconComponent = (iconName) => {
@@ -54,29 +53,26 @@ const getIconComponent = (iconName) => {
   return icon;
 };
 
-const buttonClasses = computed(() => `button --${props.type} --${props.size}`);
+const linkClasses = computed(() => `link --${props.type} --${props.size}`);
 // const getIconComponent = (iconName) => TablerIcons[iconName];
 const leftIconComponent = computed(() => getIconComponent(props.leftIcon));
 const rightIconComponent = computed(() => getIconComponent(props.rightIcon));
-const iconComponent = computed(() => getIconComponent(props.icon));
-const handleClick = () => {
-  props.onClick();
-};
 </script>
 
 <template>
-  <button
-    :class="[buttonClasses, { 'icon-only': iconOnly }]"
+  <NuxtLink
+    :to="to"
+    :rel="rel"
+    :target="target"
+    :class="linkClasses"
     :disabled="disabled"
-    @click="handleClick"
   >
     <component :is="leftIconComponent"></component>
-    <component :is="iconComponent"></component>
-    <span v-if="label">{{ label }}</span>
+    {{ label }}
     <component :is="rightIconComponent"></component>
-  </button>
+  </NuxtLink>
 </template>
 
 <style lang="scss" scoped>
-@import "./button";
+@import "./link";
 </style>

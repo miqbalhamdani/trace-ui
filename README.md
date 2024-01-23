@@ -7,16 +7,16 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 ### Highest Priority
 
 - [ ] Alert
-- [ ] Button
+- [x] Button
 - [ ] Cart
 - [ ] Checkbox
 - [ ] Select Box / Combobox
 - [ ] Datepicker
 - [ ] Table
-- [ ] Input
+- [x] Input
 - [ ] Label
 - [ ] Pagination
-- [ ] Textarea
+- [x] Textarea
 
 ### High Priority
 
