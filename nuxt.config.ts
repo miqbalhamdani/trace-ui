@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
 
-  css: ["@/assets/scss/app.scss"],
+  css: ["@/assets/scss/style.scss"],
 
   modules: [
     [
@@ -24,13 +24,9 @@ export default defineNuxtConfig({
         },
       },
     ],
-    "@nuxtjs/eslint-module",
-    "@nuxtjs/stylelint-module",
+    // "@nuxtjs/eslint-module",
+    // "@nuxtjs/stylelint-module",
   ],
-
-  typescript: {
-    typeCheck: true,
-  },
 
   devtools: { enabled: true },
 });

@@ -1,0 +1,100 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap";
+@import "background";
+@import "border";
+@import "color";
+@import "effect";
+@import "flexbox";
+@import "interactivity";
+@import "layout";
+@import "sizing";
+@import "spacing";
+@import "transform";
+@import "transition";
+@import "typography";
+@import "utility";
+@import "variable";
+
+* {
+  font-family: Roboto, sans-serif !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  appearance: textfield;
+}
+
+svg {
+  stroke-width: 1.5px;
+}
+
+[data-tippy-root] {
+  max-width: 250px !important;
+
+  .tippy-box[data-theme~="customTheme"] {
+    background-color: $black-90;
+    color: $black-00;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 300;
+
+    .tippy-content {
+      padding: 8px 12px;
+    }
+
+    .tippy-arrow {
+      color: $black-90;
+    }
+  }
+
+  .tippy-box[data-theme~="customTheme"][data-placement^="right"] > .tippy-arrow::before {
+    left: -6px;
+    border-width: 6px;
+    border-color: $black-90;
+    border-right-color: $black-90;
+    border-bottom-left-radius: 4px;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+    top: 50%;
+  }
+
+  .tippy-box[data-theme~="customTheme"][data-placement^="left"] > .tippy-arrow::before {
+    right: -6px;
+    border-width: 6px;
+    border-color: $black-90;
+    border-right-color: $black-90;
+    border-bottom-left-radius: 4px;
+    transform: translateY(-50%) rotate(-135deg);
+    transform-origin: center;
+    top: 50%;
+  }
+
+  .tippy-box[data-theme~="customTheme"][data-placement^="bottom"] > .tippy-arrow::before {
+    top: -10px;
+    border-color: $black-90;
+    border-bottom-color: initial;
+    transform-origin: center bottom;
+    left: -2px;
+    border-width: 6px;
+    border-right-color: $black-90;
+    border-bottom-left-radius: 4px;
+    transform: translateY(-50%) rotate(135deg);
+  }
+
+  .tippy-box[data-theme~="customTheme"][data-placement^="top"] > .tippy-arrow::before {
+    bottom: -10px;
+    border-color: $black-90;
+    border-bottom-color: initial;
+    transform-origin: center bottom;
+    left: 6px;
+    border-width: 6px;
+    border-right-color: $black-90;
+    border-bottom-left-radius: 4px;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}

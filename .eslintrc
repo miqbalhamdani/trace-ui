@@ -1,6 +1,7 @@
 {
   "extends": ["@nuxtjs/eslint-config-typescript", "prettier"],
   "rules": {
-    "no-irregular-whitespace": ["error", { "skipComments": true }]
+    "no-irregular-whitespace": ["error", { "skipComments": true }],
+    "vue/multi-word-component-names": "off"
   }
 }

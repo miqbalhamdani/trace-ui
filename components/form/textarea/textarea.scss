@@ -1,0 +1,142 @@
+@import "@/assets/scss/style";
+
+.ktv-input {
+  max-width: 250px;
+  width: 100%;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 4px 8px;
+
+    label {
+      color: $black-100;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.1px;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: $black-50;
+    }
+  }
+
+  .support-counter {
+    margin: 4px 4px 0;
+    display: grid;
+    grid-auto-flow: column;
+    font-size: 12px;
+    font-weight: 400;
+    color: $black-60;
+    letter-spacing: 0.4px;
+
+    .helper-text {
+      margin: 0;
+    }
+
+    .counter {
+      margin: 0;
+      text-align: right;
+    }
+  }
+
+  .input {
+    padding: 10px;
+    outline: 1px solid $black-40;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    transition: outline 0.1s ease-in-out;
+
+    svg {
+      min-width: 16px;
+      min-height: 16px;
+      max-width: 16px;
+      max-height: 16px;
+    }
+
+    .tabler-icon-alert-triangle-filled {
+      color: $accent-danger-100;
+    }
+
+    .icon-close {
+      color: $black-50;
+      cursor: pointer;
+      display: none;
+
+      &:hover {
+        color: $black-100;
+      }
+    }
+
+    .tabler-icon-search {
+      color: $black-100;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 0;
+      outline: none;
+      border: none;
+      resize: none;
+      overflow-y: hidden;
+
+      &.auto-grow {
+        height: auto;
+      }
+
+      &::placeholder {
+        color: $black-40;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &:hover {
+      border-color: $black-50;
+    }
+
+    &.is-focused {
+      outline: 2px solid $accent-info-100;
+
+      .icon-close {
+        display: flex;
+      }
+    }
+
+    &.is-error {
+      outline: 2px solid $accent-danger-100;
+
+      .icon-close {
+        display: flex;
+      }
+
+      ~ .helper-text {
+        color: $accent-danger-100;
+      }
+    }
+
+    &.is-error.is-focused {
+      .icon-close {
+        display: flex;
+      }
+    }
+
+    &.is-disabled {
+      outline: 1px solid $black-30;
+      background-color: $black-20;
+      cursor: no-drop;
+
+      input:disabled {
+        cursor: no-drop;
+        background-color: $black-20;
+      }
+    }
+  }
+}
