@@ -1,5 +1,47 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif !important;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
-  font-family: Roboto, sans-serif;
-  font-style: italic;
-  font-weight: 800;
+  min-height: 100vh;
+  line-height: 1.6;
+  background: #fcfbfc;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tabler-icon {
+  stroke-width: 1.5;
+}
+
+.divider {
+  margin: 20px;
+  background-color: $color-white;
+  opacity: 0.1;
+}
+
+.divider-end {
+  margin: 20px 10px;
+  border: 1px dashed $color-white;
+  opacity: 0.5;
 }
