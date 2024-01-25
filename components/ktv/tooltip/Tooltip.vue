@@ -12,7 +12,9 @@ defineProps({
 <template>
   <TooltipProvider>
     <Tooltip>
-      <TooltipTrigger as-child><slot /></TooltipTrigger>
+      <TooltipTrigger>
+        <slot />
+      </TooltipTrigger>
       <TooltipContent>
         <p>{{ content }}</p>
       </TooltipContent>
