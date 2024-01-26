@@ -1,8 +1,10 @@
 <script setup>
 import { IconInfoCircle, IconCircleX, IconAlertTriangleFilled, IconSearch } from "@tabler/icons-vue";
 import "tippy.js/dist/tippy.css";
+import { Form, ErrorMessage, Field } from "vee-validate";
+// import * as Yup from "yup";
 
-defineProps({
+const props = defineProps({
   modelValue: {
     type: [String, Number],
     required: true,
@@ -31,13 +33,13 @@ defineProps({
     type: Boolean,
     default: false,
   },
-  errorValidation: {
+  rules: {
+    type: Function,
+    default: () => {},
+  },
+  readonly: {
     type: Boolean,
     default: false,
-  },
-  errorMessage: {
-    type: String,
-    default: "Error Message",
   },
   disabled: Boolean,
 });
@@ -46,6 +48,7 @@ const emit = defineEmits(["update:modelValue"]);
 
 // Focus Add Class
 const inputField = ref(null);
+
 function handleFocus() {
   inputField.value.classList.add("is-focused");
 }
@@ -54,6 +57,16 @@ function handleBlur() {
   inputField.value.classList.remove("is-focused");
 }
 
+function getLabelId() {
+  return props.label.toLowerCase().replace(/\s+/g, "_");
+}
+
+// const schema = Yup.object().shape({
+//   input_textfield: Yup.string()
+//     .required()
+//     .label(props.label.charAt(0).toUpperCase() + props.label.slice(1)),
+// });
+
 // Props V-Model
 const model = ref("");
 watch(model, (newValue) => {
@@ -61,17 +74,19 @@ watch(model, (newValue) => {
 });
 
 // Reset Text
-// const modelValue = ref("");
 const resetText = () => {
-  // modelValue.value = "";
   model.value = "";
 };
 </script>
 
 <template>
-  <div class="ktv-input">
+  <Form
+    v-slot="{ meta }"
+    class="ktv-input"
+    as="div"
+  >
     <div class="title">
-      <label>{{ label }}</label>
+      <label :for="getLabelId()">{{ label }}</label>
 
       <div v-if="tooltip">
         <tippy
@@ -85,41 +100,47 @@ const resetText = () => {
     </div>
     <div
       ref="inputField"
-      class="input"
-      :class="{ 'is-error is-focused': errorValidation, 'is-disabled': disabled }"
+      :class="{
+        'input': true,
+        'is-error': rules && meta.touched && !meta.valid,
+        'is-disabled': disabled,
+        'is-readonly': readonly,
+      }"
     >
       <IconSearch v-if="icon" />
-      <input
+      <Field
+        :id="getLabelId()"
         v-model="model"
+        as="input"
+        name="input_textfield"
         :disabled="disabled"
         :placeholder="placeholder"
         :type="type"
-        :error="errorValidation"
+        :readonly="readonly"
+        :rules="rules"
+        @input="handleFocus"
         @focus="handleFocus"
         @blur="handleBlur"
       />
       <IconCircleX
-        v-if="model.length >= 1"
+        v-if="meta.dirty && !disabled && !readonly"
         class="icon-close"
         @click.stop.prevent="resetText"
       />
-      <IconAlertTriangleFilled v-if="errorValidation" />
+      <IconAlertTriangleFilled v-if="rules && meta.touched && !meta.valid && !disabled && !readonly" />
     </div>
-    <span v-if="supportText">
-      <p
-        v-if="errorValidation"
-        class="helper-text"
-      >
-        {{ errorMessage }}
+    <span
+      v-if="supportText || rules"
+      class="helper-text"
+    >
+      <p v-if="rules && !readonly && meta.touched && !meta.valid">
+        <ErrorMessage name="input_textfield" />
       </p>
-      <p
-        v-if="!errorValidation"
-        class="helper-text"
-      >
+      <p v-else-if="supportText">
         {{ supportText }}
       </p>
     </span>
-  </div>
+  </Form>
 </template>
 
 <style lang="scss" scoped>

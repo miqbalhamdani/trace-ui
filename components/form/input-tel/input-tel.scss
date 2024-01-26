@@ -1,9 +1,8 @@
 @import "@/assets/scss/style";
 
-.ktv-input-select {
+.ktv-input-tel {
   max-width: 250px;
   width: 100%;
-  position: relative;
 
   .title {
     display: flex;
@@ -26,6 +25,89 @@
     }
   }
 
+  .select-menu {
+    width: auto;
+    min-width: fit-content;
+    max-width: 105px;
+    position: relative;
+    top: 0;
+
+    .select-btn {
+      display: flex;
+      height: 40px;
+      background: $black-20;
+      padding: 0 10px;
+      font-size: 14px;
+      font-weight: 400;
+      align-items: center;
+      border-radius: 8px 0 0 8px;
+      cursor: pointer;
+      justify-content: space-between;
+      color: $black-100;
+      gap: 4px;
+
+      .tabler-icon-chevron-down {
+        min-width: 18px;
+        min-height: 18px;
+        max-width: 18px;
+        max-height: 18px;
+        transition: 0.3s;
+      }
+
+      span:nth-child(1) {
+        margin-right: 5px;
+      }
+    }
+
+    .options {
+      position: absolute;
+      padding: 0;
+      margin-top: 4px;
+      border-radius: 8px;
+      background: $black-00;
+      display: none;
+      overflow: hidden;
+      width: 100%;
+      min-width: 130px;
+      max-width: 130px;
+      height: 400px;
+      overflow-y: auto;
+      margin-block-end: 0;
+      box-shadow: 0 2px 8px 0 rgba($color: $black-100, $alpha: 12%);
+
+      .option {
+        display: flex;
+        cursor: pointer;
+        padding: 10px;
+        align-items: center;
+        background: $black-00;
+
+        &:hover {
+          background: $black-20;
+        }
+
+        .flag {
+          margin-right: 10px;
+        }
+
+        .option-text {
+          font-size: 14px;
+          color: $black-80;
+        }
+      }
+    }
+
+    &.active {
+      .select-btn .tabler-icon-chevron-down {
+        transform: rotate(-180deg);
+      }
+
+      .options {
+        display: block;
+      }
+    }
+  }
+
   .helper-text {
     margin: 4px 4px 0;
     font-size: 12px;
@@ -42,12 +124,12 @@
   .input {
     min-height: 40px;
     max-height: 40px;
-    padding: 0 10px;
+    padding: 0 10px 0 0;
     outline: 1px solid $black-40;
     border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
     transition: outline 0.1s ease-in-out;
 
     svg {
@@ -72,10 +154,6 @@
 
     .tabler-icon-search {
       color: $black-100;
-    }
-
-    .tabler-icon-chevron-down {
-      transition: 0.3s;
     }
 
     input {
@@ -103,10 +181,6 @@
 
       .icon-close {
         display: flex;
-      }
-
-      .tabler-icon-chevron-down {
-        transform: rotate(-180deg);
       }
     }
 
@@ -138,34 +212,11 @@
         color: $black-60;
       }
 
-      .tabler-icon-chevron-down {
-        transform: rotate(0deg);
-      }
-    }
-  }
-
-  .autocomplete-dropdown {
-    margin-top: 4px;
-    width: 100%;
-    border-radius: 8px;
-    font-size: 14px;
-    list-style-type: none;
-    padding: 0;
-    position: absolute;
-    background: $black-00;
-    max-height: 150px;
-    overflow-y: auto;
-    z-index: 1;
-    margin-block-end: 0;
-    box-shadow: 0 2px 8px 0 rgba($color: $black-100, $alpha: 12%);
-
-    li {
-      padding: 10px;
-      cursor: pointer;
-      color: $black-80;
-
-      &:hover {
-        background-color: $black-20;
+      .select-menu {
+        .select-btn {
+          outline: 1px solid $black-30;
+          cursor: no-drop;
+        }
       }
     }
   }

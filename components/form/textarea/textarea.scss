@@ -1,6 +1,6 @@
 @import "@/assets/scss/style";
 
-.ktv-input {
+.ktv-input-textarea {
   max-width: 250px;
   width: 100%;
 
@@ -15,6 +15,7 @@
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.1px;
+      text-transform: capitalize;
     }
 
     svg {
@@ -35,6 +36,11 @@
 
     .helper-text {
       margin: 0;
+      display: block;
+
+      p {
+        margin: 0;
+      }
     }
 
     .counter {
@@ -66,7 +72,6 @@
     .icon-close {
       color: $black-50;
       cursor: pointer;
-      display: none;
 
       &:hover {
         color: $black-100;
@@ -110,6 +115,23 @@
       }
     }
 
+    &.is-disabled,
+    &.is-readonly {
+      outline: 1px solid $black-30;
+      background-color: $black-20;
+      cursor: no-drop;
+
+      textarea:disabled,
+      textarea:read-only {
+        cursor: no-drop;
+        background-color: $black-20;
+      }
+
+      ~ .helper-text {
+        color: $black-60;
+      }
+    }
+
     &.is-error {
       outline: 2px solid $accent-danger-100;
 
@@ -117,25 +139,10 @@
         display: flex;
       }
 
-      ~ .helper-text {
-        color: $accent-danger-100;
-      }
-    }
-
-    &.is-error.is-focused {
-      .icon-close {
-        display: flex;
-      }
-    }
-
-    &.is-disabled {
-      outline: 1px solid $black-30;
-      background-color: $black-20;
-      cursor: no-drop;
-
-      input:disabled {
-        cursor: no-drop;
-        background-color: $black-20;
+      ~ .support-counter {
+        .helper-text {
+          color: $accent-danger-100;
+        }
       }
     }
   }

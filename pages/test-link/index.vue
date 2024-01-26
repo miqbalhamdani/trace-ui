@@ -10,7 +10,6 @@ import KtvLink from "~/components/link/Link.vue";
         label="nastar"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         size="small"
@@ -18,7 +17,6 @@ import KtvLink from "~/components/link/Link.vue";
         left-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         size="small"
@@ -26,7 +24,6 @@ import KtvLink from "~/components/link/Link.vue";
         right-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         size="small"
@@ -35,7 +32,6 @@ import KtvLink from "~/components/link/Link.vue";
         right-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
     </div>
     <div class="d-flex">
@@ -45,14 +41,12 @@ import KtvLink from "~/components/link/Link.vue";
         left-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         label="nastar"
         right-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         label="nastar"
@@ -60,7 +54,6 @@ import KtvLink from "~/components/link/Link.vue";
         right-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
     </div>
     <div class="d-flex">
@@ -69,7 +62,6 @@ import KtvLink from "~/components/link/Link.vue";
         label="nastar"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         size="large"
@@ -77,7 +69,6 @@ import KtvLink from "~/components/link/Link.vue";
         left-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         size="large"
@@ -85,7 +76,6 @@ import KtvLink from "~/components/link/Link.vue";
         right-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         size="large"
@@ -94,7 +84,6 @@ import KtvLink from "~/components/link/Link.vue";
         right-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
     </div>
     <div class="d-flex">
@@ -103,7 +92,6 @@ import KtvLink from "~/components/link/Link.vue";
         label="nastar"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         size="extra-large"
@@ -111,7 +99,6 @@ import KtvLink from "~/components/link/Link.vue";
         left-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         size="extra-large"
@@ -119,7 +106,6 @@ import KtvLink from "~/components/link/Link.vue";
         right-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         size="extra-large"
@@ -128,7 +114,6 @@ import KtvLink from "~/components/link/Link.vue";
         right-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
     </div>
     <div class="d-flex">
@@ -138,7 +123,6 @@ import KtvLink from "~/components/link/Link.vue";
         label="nastar"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         disabled
@@ -147,7 +131,6 @@ import KtvLink from "~/components/link/Link.vue";
         left-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         disabled
@@ -156,7 +139,6 @@ import KtvLink from "~/components/link/Link.vue";
         right-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
       <KtvLink
         disabled
@@ -166,7 +148,6 @@ import KtvLink from "~/components/link/Link.vue";
         right-icon="IconHome"
         to="https://www.google.com/"
         target="_blank"
-        rel="noopener noreferrer"
       ></KtvLink>
     </div>
   </div>

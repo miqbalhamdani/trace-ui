@@ -15,6 +15,7 @@
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.1px;
+      text-transform: capitalize;
     }
 
     svg {
@@ -59,10 +60,10 @@
       border-radius: 8px;
       background: $black-00;
       display: none;
-      border: 1px solid $black-20;
       overflow: hidden;
       width: 100%;
       margin-block-end: 0;
+      box-shadow: 0 2px 8px 0 rgba($color: $black-100, $alpha: 12%);
 
       .option {
         display: flex;
@@ -99,6 +100,11 @@
     font-weight: 400;
     color: $black-60;
     letter-spacing: 0.4px;
+    display: block;
+
+    p {
+      margin: 0;
+    }
   }
 
   .input {
@@ -126,7 +132,6 @@
     .icon-close {
       color: $black-50;
       cursor: pointer;
-      display: none;
 
       &:hover {
         color: $black-100;
@@ -177,25 +182,26 @@
       }
     }
 
-    &.is-error.is-focused {
-      .icon-close {
-        display: flex;
-      }
-    }
-
-    &.is-disabled {
+    &.is-disabled,
+    &.is-readonly {
       outline: 1px solid $black-30;
       background-color: $black-20;
       cursor: no-drop;
 
-      input:disabled {
+      input:disabled,
+      input:read-only {
         cursor: no-drop;
         background-color: $black-20;
+      }
+
+      ~ .helper-text {
+        color: $black-60;
       }
 
       .select-menu {
         .select-btn {
           cursor: no-drop;
+          outline: 1px solid $black-30;
         }
       }
     }

@@ -24,8 +24,8 @@ export default defineNuxtConfig({
         },
       },
     ],
-    // "@nuxtjs/eslint-module",
-    // "@nuxtjs/stylelint-module",
+    "@nuxtjs/eslint-module",
+    "@nuxtjs/stylelint-module",
   ],
 
   devtools: { enabled: true },

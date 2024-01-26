@@ -1,6 +1,8 @@
 <script setup>
 import { IconInfoCircle, IconCircleX, IconAlertTriangleFilled, IconSearch, IconChevronDown } from "@tabler/icons-vue";
 import "tippy.js/dist/tippy.css";
+import { Form, Field, ErrorMessage } from "vee-validate";
+// import * as Yup from "yup";
 
 const props = defineProps({
   modelValue: {
@@ -31,19 +33,19 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  errorValidation: {
-    type: Boolean,
-    default: false,
-  },
-  errorMessage: {
-    type: String,
-    default: "Error Message",
-  },
-  disabled: Boolean,
   options: {
     type: Array,
     required: true,
   },
+  rules: {
+    type: Function,
+    default: () => {},
+  },
+  readonly: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: Boolean,
 });
 
 const emit = defineEmits(["update:modelValue"]);
@@ -59,10 +61,8 @@ function handleBlur() {
 }
 
 // Reset Text
-// const modelValue = ref("");
 const resetText = () => {
-  // modelValue.value = "";
-  emit("update:modelValue", "");
+  model.value = "";
 };
 
 // Props V-Model
@@ -88,17 +88,17 @@ function selectOption(option) {
   selectedOption.value = option.label;
   isActive.value = false;
 }
-defineComponent({
-  setup() {
-    return {
-      isActive,
-      selectedOption,
-      options,
-      toggleMenu,
-      selectOption,
-    };
-  },
-});
+
+function getLabelId() {
+  return props.label.toLowerCase().replace(/\s+/g, "_");
+}
+
+// const schema = Yup.object().shape({
+//   input_dropdown: Yup.string()
+//     .required()
+//     .label(props.label.charAt(0).toUpperCase() + props.label.slice(1)),
+// });
+
 onMounted(() => {
   document.addEventListener("click", handleClickOutside);
 });
@@ -109,9 +109,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="ktv-input-dropdown">
+  <Form
+    v-slot="{ meta }"
+    class="ktv-input-dropdown"
+    as="div"
+  >
     <div class="title">
-      <label>{{ label }}</label>
+      <label :for="getLabelId()">{{ label }}</label>
 
       <div v-if="tooltip">
         <tippy
@@ -125,32 +129,38 @@ onUnmounted(() => {
     </div>
     <div
       ref="inputField"
-      class="input"
-      :class="{ 'is-error is-focused': errorValidation, 'is-disabled': disabled }"
+      :class="{
+        'input': true,
+        'is-error': rules && meta.touched && !meta.valid,
+        'is-disabled': disabled,
+        'is-readonly': readonly,
+      }"
     >
       <IconSearch v-if="icon" />
-      <input
+      <Field
+        :id="getLabelId()"
         v-model="model"
+        as="input"
+        name="input_dropdown"
         :placeholder="placeholder"
         :type="type"
-        :error="errorValidation"
+        :readonly="readonly"
         :disabled="disabled"
+        :rules="rules"
         @focus="handleFocus"
         @blur="handleBlur"
+        @input="handleFocus"
       />
       <IconCircleX
-        v-if="model.length >= 1"
+        v-if="meta.dirty && !disabled && !readonly"
         class="icon-close"
         @click.stop.prevent="resetText"
       />
-      <IconAlertTriangleFilled v-if="errorValidation" />
-      <div
-        class="select-menu"
-        :class="{ active: isActive }"
-      >
+      <IconAlertTriangleFilled v-if="rules && meta.touched && !meta.valid && !disabled && !readonly" />
+      <div :class="{ 'select-menu': true, active: isActive }">
         <div
           class="select-btn"
-          @click="toggleMenu"
+          @click="!readonly && !disabled ? toggleMenu() : null"
         >
           <span class="sBtn-text">{{ selectedOption }}</span>
           <IconChevronDown />
@@ -167,21 +177,18 @@ onUnmounted(() => {
         </ul>
       </div>
     </div>
-    <span v-if="supportText">
-      <p
-        v-if="errorValidation"
-        class="helper-text"
-      >
-        {{ errorMessage }}
+    <span
+      v-if="supportText || rules"
+      class="helper-text"
+    >
+      <p v-if="rules && !readonly && meta.touched && !meta.valid">
+        <ErrorMessage name="input_dropdown" />
       </p>
-      <p
-        v-if="!errorValidation"
-        class="helper-text"
-      >
+      <p v-else-if="supportText">
         {{ supportText }}
       </p>
     </span>
-  </div>
+  </Form>
 </template>
 
 <style lang="scss" scoped>

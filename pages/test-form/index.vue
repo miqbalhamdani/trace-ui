@@ -3,15 +3,24 @@ import KtvInput from "~/components/form/input/Input.vue";
 import KtvTextArea from "~/components/form/textarea/Textarea.vue";
 import KtvInputDropdown from "~/components/form/input-dropdown/InputDropdown.vue";
 import KtvInputSelect from "~/components/form/input-select/InputSelect.vue";
+import KtvInputTel from "~/components/form/input-tel/InputTel.vue";
 
 const textField = ref("");
-const textFieldIsValid = computed(() => textField.value.length <= 3);
+function validateRule(value) {
+  if (!value) {
+    return "This field is required";
+  }
+  if (value.length <= 3) {
+    return "This field must be at least 3 character";
+  }
+  return true;
+}
 
 const textArea = ref("");
-const textAreaIsValid = computed(() => textArea.value.length <= 3);
+// const textAreaIsValid = computed(() => textArea.value.length <= 3);
 
 const inputDropdown = ref("");
-const inputDropdownIsValid = computed(() => inputDropdown.value.length <= 3);
+// const inputDropdownIsValid = computed(() => inputDropdown.value.length <= 3);
 const dataInputDropdown = [
   { id: 1, label: "cm3" },
   { id: 2, label: "mm4" },
@@ -19,63 +28,69 @@ const dataInputDropdown = [
 ];
 
 const inputSelect = ref("");
-const inputSelectIsValid = computed(() => inputSelect.value.length <= 3);
+// const inputSelectIsValid = computed(() => inputSelect.value.length <= 3);
 const dataInputSelect = ["Test A", "Test B", "Test C", "Test A", "Test B", "Test C", "Test A", "Test B", "Test C"];
+
+const inputTel = ref("");
+// const inputTelIsValid = computed(() => inputTel.value.length <= 3);
 </script>
 
 <template>
   <div style="display: flex; gap: 24px">
     <KtvTextArea
       v-model="textArea"
-      name="textfield"
-      label="Input Textfield"
-      placeholder="Placeholder Input Textfield"
-      support-text="Supporting Input Textfield"
-      :error-validation="!textAreaIsValid"
-      error-message="Error Input Textfield"
-      tooltip="Tooltip Input Textfield"
+      label="notes"
+      placeholder="Placeholder Input TextArea"
+      support-text="Supporting Input TextArea"
+      tooltip="Tooltip Input TextArea"
+      :rules="validateRule"
       maxlength="50"
       show-counter
     />
     <KtvTextArea
       v-model="textArea"
-      name="textfield"
-      label="Input Textfield"
-      placeholder="Placeholder Input Textfield"
-      tooltip="Tooltip Input Textfield"
+      label="description"
+      placeholder="Placeholder Input TextArea"
+      tooltip="Tooltip Input TextArea"
+      :rules="validateRule"
       show-counter
     />
     <KtvInput
       v-model="textField"
-      name="textfield"
-      label="Input Textfield"
+      label="provinsi"
       placeholder="Placeholder Input Textfield"
       support-text="Supporting Input Textfield"
-      :error-validation="!textFieldIsValid"
-      error-message="Error Input Textfield"
+      :rules="validateRule"
       tooltip="Tooltip Input Textfield"
+      readonly
     />
     <KtvInputDropdown
       v-model="inputDropdown"
-      name="input-dropdown"
-      label="Input Dropdown"
+      label="quantity product"
       placeholder="Placeholder Input Dropdown"
       support-text="Supporting Input Dropdown"
-      :error-validation="!inputDropdownIsValid"
-      error-message="Error Input Dropdown"
+      :rules="validateRule"
       :options="dataInputDropdown"
       tooltip="Tooltip Input Dropdown"
+      readonly
     />
     <KtvInputSelect
       v-model="inputSelect"
-      name="input-select"
-      label="Input Select"
+      label="district"
       placeholder="Placeholder Input Select"
-      support-text="Supporting Input Select"
-      :error-validation="!inputSelectIsValid"
-      error-message="Error Input Select"
+      support-text="supporting Input Select"
+      :rules="validateRule"
       :options="dataInputSelect"
       tooltip="Tooltip Input Select"
+      readonly
+    />
+    <KtvInputTel
+      v-model="inputTel"
+      label="input tel"
+      placeholder="Placeholder Input Tel"
+      support-text="Supporting Input Tel"
+      :rules="validateRule"
+      tooltip="Tooltip Input Tel"
     />
   </div>
 </template>

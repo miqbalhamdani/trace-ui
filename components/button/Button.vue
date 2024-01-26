@@ -1,6 +1,5 @@
 <script setup>
-// import * as TablerIcons from "@tabler/icons-vue";
-import { IconInfoCircle, IconCircleX, IconAlertTriangleFilled, IconSearch, IconHome } from "@tabler/icons-vue";
+import * as TablerIcons from "@tabler/icons-vue";
 
 const props = defineProps({
   label: {
@@ -41,17 +40,14 @@ const props = defineProps({
   },
 });
 
-const iconMap = {
-  "icon-info-circle": IconInfoCircle,
-  "icon-circle-x": IconCircleX,
-  "icon-alert-triangle-filled": IconAlertTriangleFilled,
-  "icon-search": IconSearch,
-  "tabler-icon tabler-icon-home": IconHome,
-};
-
+const iconComponents = Object.fromEntries(Object.entries(TablerIcons).map(([key, value]) => [key, ref(value)]));
 const getIconComponent = (iconName) => {
-  const icon = iconMap[iconName];
-  return icon;
+  const iconRef = iconComponents[iconName];
+  if (iconRef) {
+    return iconRef.value;
+  } else {
+    return null;
+  }
 };
 
 const buttonClasses = computed(() => `button --${props.type} --${props.size}`);

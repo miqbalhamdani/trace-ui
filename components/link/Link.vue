@@ -9,7 +9,7 @@ const props = defineProps({
   },
   rel: {
     type: String,
-    default: null,
+    default: "noopener noreferrer",
   },
   target: {
     type: String,

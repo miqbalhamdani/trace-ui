@@ -1,6 +1,8 @@
 <script setup>
 import { IconInfoCircle, IconCircleX, IconAlertTriangleFilled, IconSearch } from "@tabler/icons-vue";
 import "tippy.js/dist/tippy.css";
+import { Form, Field, ErrorMessage } from "vee-validate";
+// import * as Yup from "yup";
 
 const props = defineProps({
   modelValue: {
@@ -27,19 +29,19 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  errorValidation: {
-    type: Boolean,
-    default: false,
-  },
-  errorMessage: {
-    type: String,
-    default: "Error Message",
-  },
-  disabled: Boolean,
   maxlength: {
     type: String,
     default: null,
   },
+  rules: {
+    type: Function,
+    default: () => {},
+  },
+  readonly: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: Boolean,
   showCounter: Boolean,
 });
 
@@ -55,6 +57,16 @@ function handleBlur() {
   inputField.value.classList.remove("is-focused");
 }
 
+function getLabelId() {
+  return props.label.toLowerCase().replace(/\s+/g, "_");
+}
+
+// const schema = Yup.object().shape({
+//   input_textarea: Yup.string()
+//     .required()
+//     .label(props.label.charAt(0).toUpperCase() + props.label.slice(1)),
+// });
+
 // Props V-Model
 const model = ref("");
 watch(model, (newValue) => {
@@ -62,9 +74,7 @@ watch(model, (newValue) => {
 });
 
 // Reset Text
-// const modelValue = ref("");
 const resetText = () => {
-  // modelValue.value = "";
   model.value = "";
 };
 
@@ -76,6 +86,7 @@ const counter = computed(() => text.value.length);
 
 // Event handler for textarea input
 const handleInput = (event) => {
+  inputField.value.classList.add("is-focused");
   text.value = event.target.value;
   const inputText = event.target.value;
   if (inputText.length <= props.maxlength) {
@@ -88,9 +99,13 @@ const handleInput = (event) => {
 </script>
 
 <template>
-  <div class="ktv-input">
+  <Form
+    v-slot="{ meta }"
+    class="ktv-input-textarea"
+    as="div"
+  >
     <div class="title">
-      <label>{{ label }}</label>
+      <label :for="getLabelId()">{{ label }}</label>
 
       <div v-if="tooltip">
         <tippy
@@ -104,40 +119,46 @@ const handleInput = (event) => {
     </div>
     <div
       ref="inputField"
-      class="input"
-      :class="{ 'is-error is-focused': errorValidation, 'is-disabled': disabled }"
+      :class="{
+        'input': true,
+        'is-error': rules && meta.touched && !meta.valid,
+        'is-disabled': disabled,
+        'is-readonly': readonly,
+      }"
     >
       <IconSearch v-if="icon" />
-      <textarea
+      <Field
+        :id="getLabelId()"
         v-model="model"
+        as="textarea"
         class="auto-grow"
+        name="input_textarea"
         :disabled="disabled"
         :placeholder="placeholder"
-        :error="errorValidation"
+        :readonly="readonly"
         :maxlength="maxlength"
+        :rows="3"
+        :rules="rules"
         @focus="handleFocus"
         @blur="handleBlur"
         @input="handleInput"
-      ></textarea>
+      />
       <IconCircleX
-        v-if="model.length >= 1"
+        v-if="meta.dirty && !disabled && !readonly"
         class="icon-close"
         @click.stop.prevent="resetText"
       />
-      <IconAlertTriangleFilled v-if="errorValidation" />
+      <IconAlertTriangleFilled v-if="rules && meta.touched && !meta.valid && !disabled && !readonly" />
     </div>
     <div class="support-counter">
-      <span v-if="supportText">
-        <p
-          v-if="errorValidation"
-          class="helper-text"
-        >
-          {{ errorMessage }}
+      <span
+        v-if="supportText || rules"
+        class="helper-text"
+      >
+        <p v-if="rules && !readonly && meta.touched && !meta.valid">
+          <ErrorMessage name="input_textarea" />
         </p>
-        <p
-          v-if="!errorValidation"
-          class="helper-text"
-        >
+        <p v-else-if="supportText">
           {{ supportText }}
         </p>
       </span>
@@ -149,7 +170,7 @@ const handleInput = (event) => {
         <span v-if="maxlength">/ {{ maxlength }}</span>
       </p>
     </div>
-  </div>
+  </Form>
 </template>
 
 <style lang="scss" scoped>

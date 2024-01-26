@@ -15,6 +15,7 @@
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.1px;
+      text-transform: capitalize;
     }
 
     svg {
@@ -30,6 +31,11 @@
     font-weight: 400;
     color: $black-60;
     letter-spacing: 0.4px;
+    display: block;
+
+    p {
+      margin: 0;
+    }
   }
 
   .input {
@@ -57,7 +63,6 @@
     .icon-close {
       color: $black-50;
       cursor: pointer;
-      display: none;
 
       &:hover {
         color: $black-100;
@@ -108,20 +113,32 @@
       }
     }
 
-    &.is-error.is-focused {
+    &.is-required {
+      outline: 2px solid $accent-danger-100;
+
       .icon-close {
         display: flex;
       }
+
+      ~ .helper-text {
+        color: $accent-danger-100;
+      }
     }
 
-    &.is-disabled {
+    &.is-disabled,
+    &.is-readonly {
       outline: 1px solid $black-30;
       background-color: $black-20;
       cursor: no-drop;
 
-      input:disabled {
+      input:disabled,
+      input:read-only {
         cursor: no-drop;
         background-color: $black-20;
+      }
+
+      ~ .helper-text {
+        color: $black-60;
       }
     }
   }

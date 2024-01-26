@@ -1,6 +1,8 @@
 <script setup>
 import { IconInfoCircle, IconCircleX, IconAlertTriangleFilled, IconSearch, IconChevronDown } from "@tabler/icons-vue";
 import "tippy.js/dist/tippy.css";
+import { Form, Field, ErrorMessage } from "vee-validate";
+// import * as Yup from "yup";
 
 const props = defineProps({
   modelValue: {
@@ -31,19 +33,19 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  errorValidation: {
-    type: Boolean,
-    default: false,
-  },
-  errorMessage: {
-    type: String,
-    default: "Error Message",
-  },
-  disabled: Boolean,
   options: {
     type: Array,
     default: () => [],
   },
+  rules: {
+    type: Function,
+    default: () => {},
+  },
+  readonly: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: Boolean,
 });
 
 const emit = defineEmits(["update:modelValue"]);
@@ -58,18 +60,15 @@ function handleBlur() {
   inputField.value.classList.remove("is-focused");
 }
 
-// Reset Text
-// const modelValue = ref("");
-const resetText = () => {
-  // modelValue.value = "";
-  emit("update:modelValue", "");
-};
+function getLabelId() {
+  return props.label.toLowerCase().replace(/\s+/g, "_");
+}
 
-// Props V-Model
-const model = ref("");
-watch(model, (newValue) => {
-  emit("update:modelValue", newValue);
-});
+// const schema = Yup.object().shape({
+//   input_select: Yup.string()
+//     .required()
+//     .label(props.label.charAt(0).toUpperCase() + props.label.slice(1)),
+// });
 
 // Autocomplete
 const filteredOptions = ref([]);
@@ -78,6 +77,7 @@ const handleClickOutside = () => {
   dropdownVisible.value = false;
 };
 function handleInput() {
+  inputField.value.classList.add("is-focused");
   filteredOptions.value = props.options.filter((option) => {
     if (typeof option === "string") {
       return option.toLowerCase().includes(model.value.toLowerCase());
@@ -92,6 +92,17 @@ function selectOption(option) {
   dropdownVisible.value = false;
 }
 
+// Reset Text
+const resetText = () => {
+  model.value = "";
+};
+
+// Props V-Model
+const model = ref("");
+watch(model, (newValue) => {
+  emit("update:modelValue", newValue);
+});
+
 onMounted(() => {
   document.addEventListener("click", handleClickOutside);
 });
@@ -102,9 +113,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="ktv-input-select">
+  <Form
+    v-slot="{ meta }"
+    class="ktv-input-select"
+    as="div"
+  >
     <div class="title">
-      <label>{{ label }}</label>
+      <label :for="getLabelId()">{{ label }}</label>
 
       <div v-if="tooltip">
         <tippy
@@ -118,27 +133,35 @@ onUnmounted(() => {
     </div>
     <div
       ref="inputField"
-      class="input"
-      :class="{ 'is-error is-focused': errorValidation, 'is-disabled': disabled }"
+      :class="{
+        'input': true,
+        'is-error': rules && meta.touched && !meta.valid,
+        'is-disabled': disabled,
+        'is-readonly': readonly,
+      }"
     >
       <IconSearch v-if="icon" />
-      <input
+      <Field
+        :id="getLabelId()"
         v-model="model"
+        as="input"
+        name="input_select"
         :placeholder="placeholder"
         :type="type"
-        :error="errorValidation"
+        :readonly="readonly"
         :disabled="disabled"
+        :rules="rules"
         @focus="handleFocus"
         @blur="handleBlur"
         @input="handleInput"
         @keydown.enter.prevent="selectOption"
       />
       <IconCircleX
-        v-if="model.length >= 1"
+        v-if="meta.dirty && !disabled && !readonly"
         class="icon-close"
         @click.stop.prevent="resetText"
       />
-      <IconAlertTriangleFilled v-if="errorValidation" />
+      <IconAlertTriangleFilled v-if="rules && meta.touched && !meta.valid && !disabled && !readonly" />
       <IconChevronDown />
     </div>
     <ul
@@ -154,21 +177,18 @@ onUnmounted(() => {
       </li>
     </ul>
 
-    <span v-if="supportText">
-      <p
-        v-if="errorValidation"
-        class="helper-text"
-      >
-        {{ errorMessage }}
+    <span
+      v-if="supportText || rules"
+      class="helper-text"
+    >
+      <p v-if="rules && !readonly && meta.touched && !meta.valid">
+        <ErrorMessage name="input_select" />
       </p>
-      <p
-        v-if="!errorValidation"
-        class="helper-text"
-      >
+      <p v-else-if="supportText">
         {{ supportText }}
       </p>
     </span>
-  </div>
+  </Form>
 </template>
 
 <style lang="scss" scoped>

@@ -14,9 +14,13 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 - [ ] Datepicker
 - [ ] Table
 - [x] Input
+- [x] Input Dropdown
+- [x] Input Select
+- [x] Input Telephone
+- [x] Textarea
+- [x] Link
 - [ ] Label
 - [ ] Pagination
-- [x] Textarea
 
 ### High Priority
 
