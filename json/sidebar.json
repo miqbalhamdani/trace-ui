@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Survey",
+    "childs": [
+      {
+        "id": 11,
+        "name": "Dashboard & Report",
+        "icon": "",
+        "childs": []
+      }
+    ]
+  }
+]
