@@ -28,11 +28,36 @@ export default defineNuxtConfig({
     "@nuxtjs/eslint-module",
     "@nuxtjs/stylelint-module",
     "@nuxt/image",
+    "@nuxtjs/tailwindcss",
+    [
+      "shadcn-nuxt",
+      {
+        shadcn: {
+          /**
+           * Prefix for all the imported component
+           */
+          prefix: "",
+          /**
+           * Directory that the component lives in.
+           * @default "./components/ui"
+           */
+          componentDir: "./components/ui",
+        },
+      },
+    ],
   ],
 
   typescript: {
     typeCheck: true,
   },
+
+  components: [
+    {
+      path: "~/components/ktv",
+      pathPrefix: false,
+      prefix: "ktv",
+    },
+  ],
 
   devtools: { enabled: true },
 });
