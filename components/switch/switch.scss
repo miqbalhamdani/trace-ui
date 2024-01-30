@@ -1,0 +1,70 @@
+@import "@/assets/scss/style";
+
+.ktv-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $black-100;
+  user-select: none;
+  cursor: pointer;
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 50% 0 0;
+    background-color: $black-50;
+    transition: 0.4s;
+    border-radius: 100px;
+    width: 48px;
+    height: 24px;
+    transform: translateY(-50%);
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: $black-00;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
+
+  input[type="checkbox"] {
+    opacity: 0;
+    width: 48px;
+    height: 24px;
+    margin: 0;
+
+    &:checked {
+      + .slider {
+        background-color: $product-green-100;
+
+        &::before {
+          transform: translateX(24px);
+        }
+      }
+    }
+  }
+
+  &.is-disabled {
+    color: $black-30;
+
+    .slider {
+      background-color: $black-30;
+    }
+
+    input[type="checkbox"] {
+      &:checked {
+        + .slider {
+          background-color: $black-30;
+        }
+      }
+    }
+  }
+}

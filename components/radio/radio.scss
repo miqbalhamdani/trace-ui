@@ -1,0 +1,65 @@
+@import "@/assets/scss/style";
+
+.ktv-radio {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: $black-100;
+  user-select: none;
+  cursor: pointer;
+
+  input[type="radio"] {
+    appearance: none;
+    margin: 0;
+    color: $product-green-100;
+    width: 24px;
+    height: 24px;
+    border: 2px solid $black-50;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      background-color: $product-green-100;
+    }
+
+    &:checked {
+      border: 2px solid $product-green-100;
+
+      &::before {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &.is-disabled {
+    color: $black-30;
+    cursor: not-allowed;
+
+    input[type="radio"] {
+      cursor: not-allowed;
+
+      &[disabled] {
+        border: 2px solid $black-30;
+        color: $black-30;
+
+        &::before {
+          background-color: $black-30;
+        }
+
+        &:checked {
+          border: 2px solid $black-30;
+        }
+      }
+    }
+  }
+}

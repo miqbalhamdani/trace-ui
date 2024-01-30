@@ -1,0 +1,9 @@
+.ktv-form-group {
+  display: flex;
+  gap: 20px;
+  flex-flow: row wrap;
+
+  &.vertical {
+    flex-direction: column;
+  }
+}

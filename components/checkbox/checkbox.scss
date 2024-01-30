@@ -1,0 +1,72 @@
+@import "@/assets/scss/style";
+
+.ktv-checkbox {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: $black-100;
+  user-select: none;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    background-color: $black-00;
+    color: $black-50;
+    width: 24px;
+    height: 24px;
+    border: 2px solid $black-50;
+    border-radius: 6px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      width: 0.65em;
+      height: 0.65em;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      transform: scale(0);
+      transform-origin: bottom left;
+      transition: 120ms transform ease-in-out;
+      background-color: $black-00;
+    }
+
+    &:checked {
+      background-color: $product-green-100;
+      border: 2px solid $product-green-100;
+
+      &::before {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &.is-disabled {
+    color: $black-30;
+    cursor: not-allowed;
+
+    input[type="checkbox"] {
+      cursor: not-allowed;
+
+      &[disabled] {
+        border: 2px solid $black-30;
+        color: $black-30;
+
+        &::before {
+          background-color: $black-30;
+        }
+
+        &:checked {
+          background-color: $black-30;
+
+          &::before {
+            background-color: $black-00;
+          }
+        }
+      }
+    }
+  }
+}
