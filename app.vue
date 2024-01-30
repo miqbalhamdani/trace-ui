@@ -1,11 +1,20 @@
+<script setup lang="ts">
+import menus from "@/json/sidebar.json";
+</script>
+
 <template>
   <main>
-    <Sidebar />
-    <div class="content-ds">
-      <NuxtLoadingIndicator />
-      <NuxtPage />
+    <div class="flex flex-row">
+      <KtvSidebar :menus="menus" />
+
+      <div class="main-content">
+        <KtvHeader />
+        <div class="content-ds">
+          <NuxtLoadingIndicator />
+          Koltiva Indonesia
+        </div>
+      </div>
     </div>
-    <Header />
   </main>
 </template>
 
@@ -21,13 +30,14 @@
   opacity: 0;
 }
 
+.main-content {
+  display: flex;
+  flex-flow: column;
+  width: calc(100% - 240px);
+  height: 100vh;
+}
+
 .content-ds {
-  position: relative;
-  top: 91px;
-  width: 100%;
-  max-width: calc(100% - 240px);
   padding: 20px;
-  margin-right: 0;
-  margin-left: auto;
 }
 </style>

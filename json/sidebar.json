@@ -1,0 +1,123 @@
+[
+  {
+    "name": "Survey",
+    "type": "title"
+  },
+  {
+    "id": 1,
+    "name": "Dashboard & Report",
+    "type": "body",
+    "icon": "pie-chart.svg",
+    "childs": [
+      {
+        "name": "Dashboard",
+        "type": "title"
+      },
+      {
+        "id": 11,
+        "name": "Family and Labor",
+        "type": "body",
+        "url": "",
+        "info": "Lorem ipsum dolor sit amet consectetur"
+      },
+      {
+        "id": 12,
+        "name": "Land Use Change GHG Emissions",
+        "type": "body",
+        "url": "",
+        "info": "Lorem ipsum dolor sit amet consectetur"
+      },
+      {
+        "id": 13,
+        "name": "Producer Training and Coaching",
+        "type": "body",
+        "url": "",
+        "info": ""
+      },
+      {
+        "name": "Report",
+        "type": "title"
+      },
+      {
+        "id": 14,
+        "name": "Data User Sync",
+        "type": "body",
+        "url": "",
+        "info": ""
+      },
+      {
+        "id": 15,
+        "name": "Log Activity User",
+        "type": "body",
+        "url": "",
+        "info": ""
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Map",
+    "type": "body",
+    "icon": "maps.svg",
+    "childs": [
+      {
+        "name": "Dashboard",
+        "type": "title"
+      },
+      {
+        "id": 21,
+        "name": "Land Use Change GHG Emissions",
+        "type": "body",
+        "url": ""
+      },
+      {
+        "id": 22,
+        "name": "Producer Training and Coaching",
+        "type": "body",
+        "url": ""
+      }
+    ],
+    "url": ""
+  },
+  {
+    "id": 3,
+    "name": "Producers",
+    "type": "body",
+    "icon": "producer.svg",
+    "childs": [
+      {
+        "id": 31,
+        "name": "Data User Sync",
+        "type": "body",
+        "url": ""
+      },
+      {
+        "id": 32,
+        "name": "Log Activity User",
+        "type": "body",
+        "url": ""
+      }
+    ],
+    "url": ""
+  },
+  {
+    "name": "Coaching & Training",
+    "type": "title"
+  },
+  {
+    "id": 4,
+    "name": "Action Plan",
+    "type": "body",
+    "icon": "pie-chart.svg",
+    "childs": [],
+    "url": "action-plan"
+  },
+  {
+    "id": 5,
+    "name": "Training & Coaching",
+    "type": "body",
+    "icon": "maps.svg",
+    "childs": [],
+    "url": "training-coaching"
+  }
+]
