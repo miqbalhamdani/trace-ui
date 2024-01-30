@@ -8,7 +8,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 - [ ] Alert
 - [x] Button
-- [ ] Cart
+- [ ] Card
 - [ ] Checkbox
 - [ ] Select Box / Combobox
 - [ ] Datepicker
@@ -19,7 +19,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 - [x] Input Telephone
 - [x] Textarea
 - [x] Link
-- [ ] Label
+- [ ] Label / Typography
 - [ ] Pagination
 
 ### High Priority
@@ -34,7 +34,8 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 - [ ] Accordion
 - [ ] Badge
-- [ ] Loading / Progress
+- [x] Progress Bar
+- [x] Loading / Spinner
 - [ ] Skeleton
 - [ ] Switch
 - [ ] Tooltip
