@@ -37,6 +37,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 - [x] Loading / Progress
 - [ ] Skeleton
 - [x] Switch
+- [x] Chips
 - [ ] Tooltip
 
 ## Setup
