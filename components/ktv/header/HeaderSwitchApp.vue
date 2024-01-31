@@ -43,10 +43,11 @@ const openSwitchApp = () => {
         <p>Switch to</p>
       </div>
       <div class="body">
-        <div
+        <a
           v-for="(item, index) in props.appList"
           :key="index"
           class="list"
+          :href="item.url"
         >
           <img
             :src="item.icon"
@@ -57,7 +58,7 @@ const openSwitchApp = () => {
             <p class="sub-title">{{ item.description }}</p>
           </span>
           <IconCheck v-if="item.code === activeAppCode" />
-        </div>
+        </a>
       </div>
     </div>
   </span>

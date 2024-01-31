@@ -32,7 +32,7 @@ const showSecondSidebar = (menu: MenuInterface) => {
           <label>{{ item.name }}</label>
         </template>
 
-        <template v-else>
+        <template v-else-if="item.childs && item.childs.length > 0">
           <div
             class="list-menu"
             @mouseenter="showSecondSidebar(item)"
@@ -41,13 +41,10 @@ const showSecondSidebar = (menu: MenuInterface) => {
             <img :src="`/icons/${item.icon}`" />
             <span class="font-size-14 font-weight-500">{{ item.name }}</span>
 
-            <img
-              v-if="item.childs && item.childs.length > 0"
-              src="/icons/arrow-right.svg"
-            />
+            <img src="/icons/arrow-right.svg" />
 
             <div
-              v-if="item.childs && item.childs.length > 0 && activeMenu === item.name"
+              v-if="activeMenu === item.name"
               class="custom-second-sidebar"
             >
               <div
@@ -63,17 +60,32 @@ const showSecondSidebar = (menu: MenuInterface) => {
                 </template>
 
                 <template v-else>
-                  <p>{{ childItem.name }}</p>
-                  <KtvTooltip
-                    v-if="childItem.info !== undefined && childItem.info"
-                    content="Lorem ipsum dolor sit amet consectetur"
+                  <NuxtLink
+                    :to="childItem.url"
+                    class="flex justify-between w-full"
                   >
-                    <img src="/icons/info.svg" />
-                  </KtvTooltip>
+                    <p>{{ childItem.name }}</p>
+                    <KtvTooltip
+                      v-if="childItem.info !== undefined && childItem.info"
+                      content="Lorem ipsum dolor sit amet consectetur"
+                    >
+                      <img src="/icons/info.svg" />
+                    </KtvTooltip>
+                  </NuxtLink>
                 </template>
               </div>
             </div>
           </div>
+        </template>
+
+        <template v-else>
+          <NuxtLink
+            :to="item.url"
+            class="list-menu"
+          >
+            <img :src="`/icons/${item.icon}`" />
+            <span class="font-size-14 font-weight-500">{{ item.name }}</span>
+          </NuxtLink>
         </template>
       </li>
     </ul>
