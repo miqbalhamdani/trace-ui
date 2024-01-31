@@ -4,6 +4,16 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
 
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "~/assets/scss/variables.scss" as *;',
+        },
+      },
+    },
+  },
+
   css: ["@/assets/scss/app.scss"],
 
   modules: [
@@ -17,6 +27,7 @@ export default defineNuxtConfig({
     ],
     "@nuxtjs/eslint-module",
     "@nuxtjs/stylelint-module",
+    "@nuxt/image",
     "@nuxtjs/tailwindcss",
     [
       "shadcn-nuxt",

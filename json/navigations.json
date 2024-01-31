@@ -1,0 +1,69 @@
+[
+  {
+    "name": "My Profile",
+    "icon": "IconUser",
+    "url": ""
+  },
+  {
+    "name": "User Group",
+    "icon": "IconUserCode",
+    "url": "",
+    "user_group": [
+      {
+        "group_name": "Group name",
+        "partner_name": "Partner name",
+        "current_gorup": ""
+      },
+      {
+        "group_name": "Group name",
+        "partner_name": "Partner name",
+        "current_gorup": ""
+      },
+      {
+        "group_name": "Group name",
+        "partner_name": "Partner name",
+        "current_gorup": ""
+      },
+      {
+        "group_name": "Group name",
+        "partner_name": "Partner name",
+        "current_gorup": ""
+      },
+      {
+        "group_name": "Group name",
+        "partner_name": "Partner name",
+        "current_gorup": ""
+      },
+      {
+        "group_name": "Group name",
+        "partner_name": "Partner name",
+        "current_gorup": ""
+      },
+      {
+        "group_name": "Group name",
+        "partner_name": "Partner name",
+        "current_gorup": ""
+      }
+    ]
+  },
+  {
+    "name": "Privacy policy",
+    "icon": "IconFileText",
+    "url": ""
+  },
+  {
+    "name": "Terms of use",
+    "icon": "IconFile",
+    "url": ""
+  },
+  {
+    "name": "Feedback",
+    "icon": "IconMessage",
+    "url": ""
+  },
+  {
+    "name": "Settings",
+    "icon": "IconSettings",
+    "url": ""
+  }
+]
