@@ -37,7 +37,7 @@ const openNotification = () => {
             loop
             muted
             playsinline
-            src="/icons/bell-notification.webm"
+            src="~/assets/icons/bell-notification.webm"
             height="120"
             width="120"
           ></video>

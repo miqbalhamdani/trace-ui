@@ -62,7 +62,7 @@ const closeGroup = (item: Navigations) => {
       <p class="text-group">{{ props.userGroup }}</p>
     </span>
     <img
-      src="/images/user1.png"
+      src="~/assets/icons/user1.png"
       alt="emptyPhoto"
     />
     <IconChevronDown />
