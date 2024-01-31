@@ -13,11 +13,11 @@ const props = defineProps({
     default: "border",
   },
 });
-const spinner = computed(() => `spinner --${props.variant} --${props.size} --${props.type}`);
+const spinnerClasses = computed(() => `spinner --${props.variant} --${props.size} --${props.type}`);
 </script>
 
 <template>
-  <div :class="spinner"></div>
+  <div :class="spinnerClasses"></div>
 </template>
 
 <style lang="scss" scoped>

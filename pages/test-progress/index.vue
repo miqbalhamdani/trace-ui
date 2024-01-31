@@ -24,9 +24,10 @@ import KtvSpinner from "~/components/progress/spinner/Spinner.vue";
       :value="100"
       animated
     />
+
     <KtvSpinner
       size="small"
-      variant="info"
+      variant="warning"
     />
     <KtvSpinner
       size="medium"
@@ -34,7 +35,7 @@ import KtvSpinner from "~/components/progress/spinner/Spinner.vue";
     />
     <KtvSpinner
       size="large"
-      variant="success"
+      variant="info"
     />
     <KtvSpinner
       size="small"

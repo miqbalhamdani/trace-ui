@@ -15,6 +15,116 @@
       min-height: 16px;
       border: 4px solid;
       border-top: 4px solid;
+
+      &.--general {
+        &::before,
+        &::after {
+          content: "";
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: $product-green-100;
+          position: absolute;
+          right: -1.1px;
+        }
+
+        &::before {
+          top: -1px;
+          left: -1.1px;
+        }
+
+        &::after {
+          bottom: 13px;
+        }
+      }
+
+      &.--info {
+        &::before,
+        &::after {
+          content: "";
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: $accent-info-100;
+          position: absolute;
+          right: -1.1px;
+        }
+
+        &::before {
+          top: -1px;
+          left: -1.1px;
+        }
+
+        &::after {
+          bottom: 13px;
+        }
+      }
+
+      &.--warning {
+        &::before,
+        &::after {
+          content: "";
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: $accent-warning-100;
+          position: absolute;
+          right: -1.1px;
+        }
+
+        &::before {
+          top: -1px;
+          left: -1.1px;
+        }
+
+        &::after {
+          bottom: 13px;
+        }
+      }
+
+      &.--error {
+        &::before,
+        &::after {
+          content: "";
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: $accent-danger-100;
+          position: absolute;
+          right: -1.1px;
+        }
+
+        &::before {
+          top: -1px;
+          left: -1.1px;
+        }
+
+        &::after {
+          bottom: 13px;
+        }
+      }
+
+      &.--success {
+        &::before,
+        &::after {
+          content: "";
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: $accent-success-100;
+          position: absolute;
+          right: -1.1px;
+        }
+
+        &::before {
+          top: -1px;
+          left: -1.1px;
+        }
+
+        &::after {
+          bottom: 13px;
+        }
+      }
     }
 
     &.--medium {
@@ -24,6 +134,116 @@
       min-height: 32px;
       border: 6px solid;
       border-top: 6px solid;
+
+      &.--general {
+        &::before,
+        &::after {
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: $product-green-100;
+          position: absolute;
+          right: -0.4px;
+        }
+
+        &::before {
+          top: 0;
+          left: -0.87px;
+        }
+
+        &::after {
+          bottom: 26.35px;
+        }
+      }
+
+      &.--info {
+        &::before,
+        &::after {
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: $accent-info-100;
+          position: absolute;
+          right: -0.4px;
+        }
+
+        &::before {
+          top: 0;
+          left: -0.87px;
+        }
+
+        &::after {
+          bottom: 26.35px;
+        }
+      }
+
+      &.--warning {
+        &::before,
+        &::after {
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: $accent-warning-100;
+          position: absolute;
+          right: -0.4px;
+        }
+
+        &::before {
+          top: 0;
+          left: -0.87px;
+        }
+
+        &::after {
+          bottom: 26.35px;
+        }
+      }
+
+      &.--error {
+        &::before,
+        &::after {
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: $accent-danger-100;
+          position: absolute;
+          right: -0.4px;
+        }
+
+        &::before {
+          top: 0;
+          left: -0.87px;
+        }
+
+        &::after {
+          bottom: 26.35px;
+        }
+      }
+
+      &.--success {
+        &::before,
+        &::after {
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: $accent-success-100;
+          position: absolute;
+          right: -0.4px;
+        }
+
+        &::before {
+          top: 0;
+          left: -0.87px;
+        }
+
+        &::after {
+          bottom: 26.35px;
+        }
+      }
     }
 
     &.--large {
@@ -33,6 +253,116 @@
       min-height: 48px;
       border: 7px solid;
       border-top: 7px solid;
+
+      &.--general {
+        &::before,
+        &::after {
+          content: "";
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: $product-green-100;
+          position: absolute;
+          right: 1px;
+        }
+
+        &::before {
+          top: 1px;
+          left: 1.1px;
+        }
+
+        &::after {
+          bottom: 40px;
+        }
+      }
+
+      &.--info {
+        &::before,
+        &::after {
+          content: "";
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: $accent-info-100;
+          position: absolute;
+          right: 1px;
+        }
+
+        &::before {
+          top: 1px;
+          left: 1.1px;
+        }
+
+        &::after {
+          bottom: 40px;
+        }
+      }
+
+      &.--warning {
+        &::before,
+        &::after {
+          content: "";
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: $accent-warning-100;
+          position: absolute;
+          right: 1px;
+        }
+
+        &::before {
+          top: 1px;
+          left: 1.1px;
+        }
+
+        &::after {
+          bottom: 40px;
+        }
+      }
+
+      &.--error {
+        &::before,
+        &::after {
+          content: "";
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: $accent-danger-100;
+          position: absolute;
+          right: 1px;
+        }
+
+        &::before {
+          top: 1px;
+          left: 1.1px;
+        }
+
+        &::after {
+          bottom: 40px;
+        }
+      }
+
+      &.--success {
+        &::before,
+        &::after {
+          content: "";
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: $accent-success-100;
+          position: absolute;
+          right: 1px;
+        }
+
+        &::before {
+          top: 1px;
+          left: 1.1px;
+        }
+
+        &::after {
+          bottom: 40px;
+        }
+      }
     }
 
     &.--general {
@@ -121,7 +451,6 @@
 }
 
 @keyframes pulse {
-  0%,
   100% {
     opacity: 1;
   }
