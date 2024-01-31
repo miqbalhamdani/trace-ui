@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import appList from "@/json/applicationList.json";
+import navigations from "@/json/navigations.json";
 import menus from "@/json/sidebar.json";
 </script>
 
@@ -8,7 +10,16 @@ import menus from "@/json/sidebar.json";
       <KtvSidebar :menus="menus" />
 
       <div class="main-content">
-        <KtvHeader />
+        <KtvHeader
+          title="Program KPI (General)"
+          subtitle="Program KPI (General)"
+          user-name="User Name"
+          user-group="User group name"
+          :navigations="navigations"
+          :app-list="appList"
+          active-app-code="loan"
+          @logout="() => console.log('doing logout trigger')"
+        />
         <div class="content-ds">
           <NuxtLoadingIndicator />
           Koltiva Indonesia

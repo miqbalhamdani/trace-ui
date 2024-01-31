@@ -1,0 +1,23 @@
+[
+  {
+    "code": "fr",
+    "name": "MIS FarmRetail",
+    "description": "POS and order management",
+    "icon": "https://farmretail.s3.ap-southeast-1.amazonaws.com/MIS-FR/656ecf541c1e6.png",
+    "url": "https://development-v2.koltitrace.com/farmretail/"
+  },
+  {
+    "code": "mis",
+    "name": "MIS Koltitrace",
+    "description": "Traceability and Transaction",
+    "icon": "https://farmretail.s3.ap-southeast-1.amazonaws.com/MIS-FR/656ecf95d93dc.png",
+    "url": "https://development-v2.koltitrace.com/home/direct_mis"
+  },
+  {
+    "code": "loan",
+    "name": "MIS Loan",
+    "description": "Loan and repayment",
+    "icon": "https://farmretail.s3.ap-southeast-1.amazonaws.com/MIS-FR/656ecfc1b4671.png",
+    "url": "https://development-v2.koltitrace.com/koltipay/"
+  }
+]

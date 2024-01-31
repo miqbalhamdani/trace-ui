@@ -1,0 +1,45 @@
+.custom-header {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 30px;
+  background-color: #fcfbfc;
+  box-shadow: 0 1px $color-black-10;
+
+  .custom-navbar-left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    align-items: flex-start;
+
+    span {
+      &:first-child {
+        font-size: 26px;
+        font-weight: 600;
+        line-height: normal;
+        color: $color-black-100;
+      }
+
+      &:last-child {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: normal;
+        color: $color-black-60;
+      }
+    }
+  }
+
+  .custom-navbar-right {
+    display: flex;
+    column-gap: 28px;
+    align-items: center;
+
+    .tabler-icon {
+      width: 20px;
+      height: 20px;
+      color: $color-black-100;
+    }
+  }
+}
