@@ -19,14 +19,14 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 - [x] Input Telephone
 - [x] Textarea
 - [x] Link
-- [ ] Label / Typography
+- [x] Label / Typography
 - [ ] Pagination
 
 ### High Priority
 
 - [ ] Alert Dialog
 - [ ] Dialog / Modal
-- [ ] Radio Group
+- [x] Radio Group
 - [ ] Tabs
 - [ ] Toast
 
@@ -39,6 +39,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 - [ ] Skeleton
 - [ ] Switch
 - [ ] Tooltip
+- [ ] Icon
 
 ## Setup
 
