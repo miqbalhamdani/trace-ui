@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { IconArrowNarrowUp, IconChevronRight, IconInfoCircle } from "@tabler/icons-vue";
+
 import { type MenuInterface } from "@/json/sidebarInterface";
 const props = defineProps<{
   menus: MenuInterface[];
@@ -41,7 +43,7 @@ const showSecondSidebar = (menu: MenuInterface) => {
             <img :src="`/icons/${item.icon}`" />
             <span class="font-size-14 font-weight-500">{{ item.name }}</span>
 
-            <img src="/icons/arrow-right.svg" />
+            <IconChevronRight />
 
             <div
               v-if="activeMenu === item.name"
@@ -69,7 +71,7 @@ const showSecondSidebar = (menu: MenuInterface) => {
                       v-if="childItem.info !== undefined && childItem.info"
                       content="Lorem ipsum dolor sit amet consectetur"
                     >
-                      <img src="/icons/info.svg" />
+                      <IconInfoCircle />
                     </KtvTooltip>
                   </NuxtLink>
                 </template>
@@ -92,7 +94,7 @@ const showSecondSidebar = (menu: MenuInterface) => {
 
     <hr class="divider-end" />
     <div class="sidebar-bottom">
-      <img src="/icons/arrow-up.svg" />
+      <IconArrowNarrowUp />
       <p>You have reached the end of the side menu</p>
     </div>
   </div>
