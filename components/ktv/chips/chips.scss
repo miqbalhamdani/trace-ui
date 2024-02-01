@@ -1,0 +1,78 @@
+@import "@/assets/scss/style";
+
+.ktv-chips {
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+  width: fit-content;
+  font-weight: 400;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 100px;
+
+  svg {
+    stroke-width: 1.5;
+  }
+
+  &.--default {
+    color: $accent-success-100;
+    background-color: $accent-success-40;
+  }
+
+  &.--error {
+    color: $accent-danger-100;
+    background-color: $accent-danger-40;
+  }
+
+  &.--warning {
+    color: $accent-warning-100;
+    background-color: $accent-warning-40;
+  }
+
+  &.--info {
+    color: $accent-info-100;
+    background-color: $accent-info-40;
+  }
+
+  &.--rest {
+    color: $black-60;
+    background-color: $black-30;
+  }
+
+  // Size
+  &.--large {
+    height: 40px;
+    padding: 0 16px 0 8px;
+    font-size: 16px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &.--medium {
+    height: 36px;
+    padding: 0 12px 0 8px;
+    font-size: 14px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.--small {
+    column-gap: 2px;
+    height: 24px;
+    padding: 0 8px 0 4px;
+    font-size: 12px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  // End Size
+}

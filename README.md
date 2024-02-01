@@ -6,10 +6,10 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ### Highest Priority
 
-- [ ] Alert
+- [x] Alert
 - [x] Button
 - [ ] Card
-- [ ] Checkbox
+- [x] Checkbox
 - [ ] Select Box / Combobox
 - [ ] Datepicker
 - [ ] Table
@@ -28,7 +28,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 - [ ] Dialog / Modal
 - [x] Radio Group
 - [ ] Tabs
-- [ ] Toast
+- [x] Toast
 
 ### Medium Priority
 
@@ -36,8 +36,10 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 - [ ] Badge
 - [x] Progress Bar
 - [x] Loading / Spinner
+- [x] Loading / Progress
 - [ ] Skeleton
-- [ ] Switch
+- [x] Switch
+- [x] Chips
 - [ ] Tooltip
 - [ ] Icon
 
