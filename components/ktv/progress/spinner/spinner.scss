@@ -1,0 +1,461 @@
+@import "@/assets/scss/style";
+
+.spinner {
+  position: relative;
+  margin: auto;
+
+  &.--border {
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+
+    &.--small {
+      width: 16px;
+      min-width: 16px;
+      height: 16px;
+      min-height: 16px;
+      border: 4px solid;
+      border-top: 4px solid;
+
+      &.--general {
+        &::before,
+        &::after {
+          position: absolute;
+          right: -1.1px;
+          width: 4px;
+          height: 4px;
+          content: "";
+          background: $product-green-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: -1px;
+          left: -1.1px;
+        }
+
+        &::after {
+          bottom: 13px;
+        }
+      }
+
+      &.--info {
+        &::before,
+        &::after {
+          position: absolute;
+          right: -1.1px;
+          width: 4px;
+          height: 4px;
+          content: "";
+          background: $accent-info-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: -1px;
+          left: -1.1px;
+        }
+
+        &::after {
+          bottom: 13px;
+        }
+      }
+
+      &.--warning {
+        &::before,
+        &::after {
+          position: absolute;
+          right: -1.1px;
+          width: 4px;
+          height: 4px;
+          content: "";
+          background: $accent-warning-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: -1px;
+          left: -1.1px;
+        }
+
+        &::after {
+          bottom: 13px;
+        }
+      }
+
+      &.--error {
+        &::before,
+        &::after {
+          position: absolute;
+          right: -1.1px;
+          width: 4px;
+          height: 4px;
+          content: "";
+          background: $accent-danger-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: -1px;
+          left: -1.1px;
+        }
+
+        &::after {
+          bottom: 13px;
+        }
+      }
+
+      &.--success {
+        &::before,
+        &::after {
+          position: absolute;
+          right: -1.1px;
+          width: 4px;
+          height: 4px;
+          content: "";
+          background: $accent-success-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: -1px;
+          left: -1.1px;
+        }
+
+        &::after {
+          bottom: 13px;
+        }
+      }
+    }
+
+    &.--medium {
+      width: 32px;
+      min-width: 32px;
+      height: 32px;
+      min-height: 32px;
+      border: 6px solid;
+      border-top: 6px solid;
+
+      &.--general {
+        &::before,
+        &::after {
+          position: absolute;
+          right: -0.4px;
+          width: 6px;
+          height: 6px;
+          content: "";
+          background: $product-green-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: 0;
+          left: -0.87px;
+        }
+
+        &::after {
+          bottom: 26.35px;
+        }
+      }
+
+      &.--info {
+        &::before,
+        &::after {
+          position: absolute;
+          right: -0.4px;
+          width: 6px;
+          height: 6px;
+          content: "";
+          background: $accent-info-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: 0;
+          left: -0.87px;
+        }
+
+        &::after {
+          bottom: 26.35px;
+        }
+      }
+
+      &.--warning {
+        &::before,
+        &::after {
+          position: absolute;
+          right: -0.4px;
+          width: 6px;
+          height: 6px;
+          content: "";
+          background: $accent-warning-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: 0;
+          left: -0.87px;
+        }
+
+        &::after {
+          bottom: 26.35px;
+        }
+      }
+
+      &.--error {
+        &::before,
+        &::after {
+          position: absolute;
+          right: -0.4px;
+          width: 6px;
+          height: 6px;
+          content: "";
+          background: $accent-danger-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: 0;
+          left: -0.87px;
+        }
+
+        &::after {
+          bottom: 26.35px;
+        }
+      }
+
+      &.--success {
+        &::before,
+        &::after {
+          position: absolute;
+          right: -0.4px;
+          width: 6px;
+          height: 6px;
+          content: "";
+          background: $accent-success-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: 0;
+          left: -0.87px;
+        }
+
+        &::after {
+          bottom: 26.35px;
+        }
+      }
+    }
+
+    &.--large {
+      width: 48px;
+      min-width: 48px;
+      height: 48px;
+      min-height: 48px;
+      border: 7px solid;
+      border-top: 7px solid;
+
+      &.--general {
+        &::before,
+        &::after {
+          position: absolute;
+          right: 1px;
+          width: 7px;
+          height: 7px;
+          content: "";
+          background: $product-green-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: 1px;
+          left: 1.1px;
+        }
+
+        &::after {
+          bottom: 40px;
+        }
+      }
+
+      &.--info {
+        &::before,
+        &::after {
+          position: absolute;
+          right: 1px;
+          width: 7px;
+          height: 7px;
+          content: "";
+          background: $accent-info-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: 1px;
+          left: 1.1px;
+        }
+
+        &::after {
+          bottom: 40px;
+        }
+      }
+
+      &.--warning {
+        &::before,
+        &::after {
+          position: absolute;
+          right: 1px;
+          width: 7px;
+          height: 7px;
+          content: "";
+          background: $accent-warning-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: 1px;
+          left: 1.1px;
+        }
+
+        &::after {
+          bottom: 40px;
+        }
+      }
+
+      &.--error {
+        &::before,
+        &::after {
+          position: absolute;
+          right: 1px;
+          width: 7px;
+          height: 7px;
+          content: "";
+          background: $accent-danger-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: 1px;
+          left: 1.1px;
+        }
+
+        &::after {
+          bottom: 40px;
+        }
+      }
+
+      &.--success {
+        &::before,
+        &::after {
+          position: absolute;
+          right: 1px;
+          width: 7px;
+          height: 7px;
+          content: "";
+          background: $accent-success-100;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: 1px;
+          left: 1.1px;
+        }
+
+        &::after {
+          bottom: 40px;
+        }
+      }
+    }
+
+    &.--general {
+      border-color: $product-green-100;
+      border-top-color: $product-green-40;
+    }
+
+    &.--info {
+      border-color: $accent-info-100;
+      border-top-color: $accent-info-40;
+    }
+
+    &.--warning {
+      border-color: $accent-warning-100;
+      border-top-color: $accent-warning-40;
+    }
+
+    &.--error {
+      border-color: $accent-danger-100;
+      border-top-color: $accent-danger-40;
+    }
+
+    &.--success {
+      border-color: $accent-success-100;
+      border-top-color: $accent-success-40;
+    }
+  }
+
+  &.--grow {
+    position: relative;
+    margin: auto;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+
+    &.--small {
+      width: 16px;
+      min-width: 16px;
+      height: 16px;
+      min-height: 16px;
+    }
+
+    &.--medium {
+      width: 32px;
+      min-width: 32px;
+      height: 32px;
+      min-height: 32px;
+    }
+
+    &.--large {
+      width: 48px;
+      min-width: 48px;
+      height: 48px;
+      min-height: 48px;
+    }
+
+    &.--general {
+      background-color: $product-green-100;
+    }
+
+    &.--info {
+      background-color: $accent-info-100;
+    }
+
+    &.--warning {
+      background-color: $accent-warning-100;
+    }
+
+    &.--error {
+      background-color: $accent-danger-100;
+    }
+
+    &.--success {
+      background-color: $accent-success-100;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}

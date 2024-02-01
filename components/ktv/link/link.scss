@@ -1,0 +1,510 @@
+@import "@/assets/scss/style";
+
+.link {
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: color 0.5s;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1.5;
+  }
+
+  &.--default {
+    color: $primary-green-100;
+
+    &:hover {
+      color: $primary-green-110;
+    }
+
+    &:focus {
+      color: $primary-green-120;
+    }
+  }
+
+  &[disabled] {
+    color: $black-30 !important;
+    text-decoration: none;
+    cursor: not-allowed;
+  }
+
+  // Primary Green
+  &.--primary-green {
+    color: $primary-green-100;
+
+    &:hover {
+      color: $primary-green-110;
+    }
+
+    &:focus {
+      color: $primary-green-120;
+    }
+  }
+
+  &.--primary-outline-green {
+    color: $primary-green-100;
+
+    &:hover {
+      color: $primary-green-110;
+    }
+
+    &:focus {
+      color: $primary-green-120;
+    }
+  }
+
+  &.--primary-text-green {
+    color: $primary-green-100;
+
+    &:hover {
+      color: $primary-green-110;
+    }
+
+    &:focus {
+      color: $primary-green-120;
+    }
+  }
+
+  // End Primary Green
+
+  // Primary Brown
+  &.--primary-brown {
+    color: $primary-brown-100;
+
+    &:hover {
+      color: $primary-brown-110;
+    }
+
+    &:focus {
+      color: $primary-brown-120;
+    }
+  }
+
+  &.--primary-outline-brown {
+    color: $primary-brown-100;
+
+    &:hover {
+      color: $primary-brown-110;
+    }
+
+    &:focus {
+      color: $primary-brown-120;
+    }
+  }
+
+  &.--primary-text-brown {
+    color: $primary-brown-100;
+
+    &:hover {
+      color: $primary-brown-110;
+    }
+
+    &:focus {
+      color: $primary-brown-120;
+    }
+  }
+
+  // End Primary Brown
+
+  // Primary Sand
+  &.--primary-sand {
+    color: $primary-sand-100;
+
+    &:hover {
+      color: $primary-sand-110;
+    }
+
+    &:focus {
+      color: $primary-sand-120;
+    }
+  }
+
+  &.--primary-outline-sand {
+    color: $primary-sand-100;
+
+    &:hover {
+      color: $primary-sand-120;
+    }
+
+    &:focus {
+      color: $primary-sand-120;
+    }
+  }
+
+  &.--primary-text-sand {
+    color: $primary-sand-100;
+
+    &:hover {
+      color: $primary-sand-110;
+    }
+
+    &:focus {
+      color: $primary-sand-120;
+    }
+  }
+
+  // End Primary Sand
+
+  // Koltiva’s Product KoltiTrace
+  &.--product-green {
+    color: $product-green-100;
+
+    &:hover {
+      color: $product-green-110;
+    }
+
+    &:focus {
+      color: $product-green-120;
+    }
+  }
+
+  &.--product-outline-green {
+    color: $product-green-100;
+
+    &:hover {
+      color: $product-green-110;
+    }
+
+    &:focus {
+      color: $product-green-120;
+    }
+  }
+
+  &.--product-text-green {
+    color: $product-green-100;
+
+    &:hover {
+      color: $product-green-110;
+    }
+
+    &:focus {
+      color: $product-green-120;
+    }
+  }
+
+  // End Koltiva’s Product KoltiTrace
+
+  // Koltiva’s Product KoltiTrade
+  &.--product-red {
+    color: $product-red-100;
+
+    &:hover {
+      color: $product-red-110;
+    }
+
+    &:focus {
+      color: $product-red-120;
+    }
+  }
+
+  &.--product-outline-red {
+    color: $product-red-100;
+
+    &:hover {
+      color: $product-red-120;
+    }
+
+    &:focus {
+      color: $product-red-120;
+    }
+  }
+
+  &.--product-text-red {
+    color: $product-red-100;
+
+    &:hover {
+      color: $product-red-110;
+    }
+
+    &:focus {
+      color: $product-red-120;
+    }
+  }
+
+  // End Koltiva’s Product KoltiTrade
+
+  // Koltiva’s Product KoltiPay
+  &.--product-blue {
+    color: $product-blue-100;
+
+    &:hover {
+      color: $product-blue-110;
+    }
+
+    &:focus {
+      color: $product-blue-120;
+    }
+  }
+
+  &.--product-outline-blue {
+    color: $product-blue-100;
+
+    &:hover {
+      color: $product-blue-110;
+    }
+
+    &:focus {
+      color: $product-blue-120;
+    }
+  }
+
+  &.--product-text-blue {
+    color: $product-blue-100;
+
+    &:hover {
+      color: $product-blue-110;
+    }
+
+    &:focus {
+      color: $product-blue-120;
+    }
+  }
+
+  // End Koltiva’s Product KoltiPay
+
+  // Koltiva’s Product KoltiSkills
+  &.--product-brown {
+    color: $product-brown-100;
+
+    &:hover {
+      color: $product-brown-110;
+    }
+
+    &:focus {
+      color: $product-brown-120;
+    }
+  }
+
+  &.--product-outline-brown {
+    color: $product-brown-100;
+
+    &:hover {
+      color: $product-brown-110;
+    }
+
+    &:focus {
+      color: $product-brown-120;
+    }
+  }
+
+  &.--product-text-brown {
+    color: $product-brown-100;
+
+    &:hover {
+      color: $product-brown-110;
+    }
+
+    &:focus {
+      color: $product-brown-120;
+    }
+  }
+
+  // End Koltiva’s Product KoltiSkills
+
+  // Accent Success
+  &.--accent-success {
+    color: $accent-success-100;
+
+    &:hover {
+      color: $accent-success-110;
+    }
+
+    &:focus {
+      color: $accent-success-120;
+    }
+  }
+
+  &.--accent-outline-success {
+    color: $accent-success-100;
+
+    &:hover {
+      color: $accent-success-110;
+    }
+
+    &:focus {
+      color: $accent-success-120;
+    }
+  }
+
+  &.--accent-text-success {
+    color: $accent-success-100;
+
+    &:hover {
+      color: $accent-success-110;
+    }
+
+    &:focus {
+      color: $accent-success-120;
+    }
+  }
+
+  // End Accent Success
+
+  // Accent Info
+  &.--accent-info {
+    color: $accent-info-100;
+
+    &:hover {
+      color: $accent-info-110;
+    }
+
+    &:focus {
+      color: $accent-info-120;
+    }
+  }
+
+  &.--accent-outline-info {
+    color: $accent-info-100;
+
+    &:hover {
+      color: $accent-info-110;
+    }
+
+    &:focus {
+      color: $accent-info-120;
+    }
+  }
+
+  &.--accent-text-info {
+    color: $accent-info-100;
+
+    &:hover {
+      color: $accent-info-110;
+    }
+
+    &:focus {
+      color: $accent-info-120;
+    }
+  }
+
+  // End Accent Info
+
+  // Accent Warning
+  &.--accent-warning {
+    color: $accent-warning-100;
+
+    &:hover {
+      color: $accent-warning-110;
+    }
+
+    &:focus {
+      color: $accent-warning-120;
+    }
+  }
+
+  &.--accent-outline-warning {
+    color: $accent-warning-100;
+
+    &:hover {
+      color: $accent-warning-110;
+    }
+
+    &:focus {
+      color: $accent-warning-120;
+    }
+  }
+
+  &.--accent-text-warning {
+    color: $accent-warning-100;
+
+    &:hover {
+      color: $accent-warning-110;
+    }
+
+    &:focus {
+      color: $accent-warning-120;
+    }
+  }
+
+  // End Accent Warning
+
+  // Accent Danger
+  &.--accent-danger {
+    color: $accent-danger-100;
+
+    &:hover {
+      color: $accent-danger-110;
+    }
+
+    &:focus {
+      color: $accent-danger-120;
+    }
+  }
+
+  &.--accent-outline-danger {
+    color: $accent-danger-100;
+
+    &:hover {
+      color: $accent-danger-110;
+    }
+
+    &:focus {
+      color: $accent-danger-120;
+    }
+  }
+
+  &.--accent-text-danger {
+    color: $accent-danger-100;
+
+    &:hover {
+      color: $accent-danger-110;
+    }
+
+    &:focus {
+      color: $accent-danger-120;
+    }
+  }
+
+  // End Accent Danger
+
+  // Size
+  &.--extra-large {
+    font-size: 22px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &.--large {
+    font-size: 16px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.--medium {
+    font-size: 14px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.--small {
+    font-size: 12px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  // End Size
+}

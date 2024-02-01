@@ -1,0 +1,662 @@
+@import "@/assets/scss/style";
+
+.button {
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 8px;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1.5;
+  }
+
+  &.--default {
+    color: $black-00;
+    background-color: $primary-green-100;
+    border: none;
+
+    &:hover {
+      background: $primary-green-110;
+    }
+
+    &:focus {
+      background: $primary-green-120;
+    }
+  }
+
+  &[disabled] {
+    color: $black-30 !important;
+    cursor: not-allowed;
+    background: $black-20 !important;
+  }
+
+  // Primary Green
+  &.--primary-green {
+    color: $black-00;
+    background-color: $primary-green-100;
+    border: none;
+
+    &:hover {
+      background: $primary-green-110;
+    }
+
+    &:focus {
+      background: $primary-green-120;
+    }
+  }
+
+  &.--primary-outline-green {
+    color: $primary-green-100;
+    background-color: transparent;
+    border: 1px solid $primary-green-100;
+
+    &:hover {
+      color: $primary-green-110;
+      border: 1px solid $primary-green-110;
+    }
+
+    &:focus {
+      color: $primary-green-120;
+      border: 1px solid $primary-green-120;
+    }
+  }
+
+  &.--primary-text-green {
+    color: $primary-green-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $primary-green-110;
+      background-color: $primary-green-40;
+    }
+
+    &:focus {
+      color: $primary-green-120;
+      background-color: $primary-green-60;
+    }
+  }
+
+  // End Primary Green
+
+  // Primary Brown
+  &.--primary-brown {
+    color: $black-00;
+    background-color: $primary-brown-100;
+    border: none;
+
+    &:hover {
+      background: $primary-brown-110;
+    }
+
+    &:focus {
+      background: $primary-brown-120;
+    }
+  }
+
+  &.--primary-outline-brown {
+    color: $primary-brown-100;
+    background-color: transparent;
+    border: 1px solid $primary-brown-100;
+
+    &:hover {
+      color: $primary-brown-110;
+      border: 1px solid $primary-brown-110;
+    }
+
+    &:focus {
+      color: $primary-brown-120;
+      border: 1px solid $primary-brown-120;
+    }
+  }
+
+  &.--primary-text-brown {
+    color: $primary-brown-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $primary-brown-110;
+      background-color: $primary-brown-40;
+    }
+
+    &:focus {
+      color: $primary-brown-120;
+      background-color: $primary-brown-60;
+    }
+  }
+
+  // End Primary Brown
+
+  // Primary Sand
+  &.--primary-sand {
+    color: $black-00;
+    background-color: $primary-sand-100;
+    border: none;
+
+    &:hover {
+      background: $primary-sand-110;
+    }
+
+    &:focus {
+      background: $primary-sand-120;
+    }
+  }
+
+  &.--primary-outline-sand {
+    color: $primary-sand-100;
+    background-color: transparent;
+    border: 1px solid $primary-sand-100;
+
+    &:hover {
+      color: $primary-sand-110;
+      border: 1px solid $primary-sand-110;
+    }
+
+    &:focus {
+      color: $primary-sand-120;
+      border: 1px solid $primary-sand-120;
+    }
+  }
+
+  &.--primary-text-sand {
+    color: $primary-sand-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $primary-sand-110;
+      background: $primary-sand-40;
+    }
+
+    &:focus {
+      color: $primary-sand-120;
+      background: $primary-sand-60;
+    }
+  }
+
+  // End Primary Sand
+
+  // Koltiva’s Product KoltiTrace
+  &.--product-green {
+    color: $black-00;
+    background-color: $product-green-100;
+    border: none;
+
+    &:hover {
+      background: $product-green-110;
+    }
+
+    &:focus {
+      background: $product-green-120;
+    }
+  }
+
+  &.--product-outline-green {
+    color: $product-green-100;
+    background-color: transparent;
+    border: 1px solid $product-green-100;
+
+    &:hover {
+      color: $product-green-110;
+      border: 1px solid $product-green-110;
+    }
+
+    &:focus {
+      color: $product-green-120;
+      border: 1px solid $product-green-120;
+    }
+  }
+
+  &.--product-text-green {
+    color: $product-green-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $product-green-110;
+      background: $product-green-40;
+    }
+
+    &:focus {
+      color: $product-green-120;
+      background: $product-green-60;
+    }
+  }
+
+  // End Koltiva’s Product KoltiTrace
+
+  // Koltiva’s Product KoltiTrade
+  &.--product-red {
+    color: $black-00;
+    background-color: $product-red-100;
+    border: none;
+
+    &:hover {
+      background: $product-red-110;
+    }
+
+    &:focus {
+      background: $product-red-120;
+    }
+  }
+
+  &.--product-outline-red {
+    color: $product-red-100;
+    background-color: transparent;
+    border: 1px solid $product-red-100;
+
+    &:hover {
+      color: $product-red-110;
+      border: 1px solid $product-red-110;
+    }
+
+    &:focus {
+      color: $product-red-120;
+      border: 1px solid $product-red-120;
+    }
+  }
+
+  &.--product-text-red {
+    color: $product-red-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $product-red-110;
+      background: $product-red-40;
+    }
+
+    &:focus {
+      color: $product-red-120;
+      background: $product-red-60;
+    }
+  }
+
+  // End Koltiva’s Product KoltiTrade
+
+  // Koltiva’s Product KoltiPay
+  &.--product-blue {
+    color: $black-00;
+    background-color: $product-blue-100;
+    border: none;
+
+    &:hover {
+      background: $product-blue-110;
+    }
+
+    &:focus {
+      background: $product-blue-120;
+    }
+  }
+
+  &.--product-outline-blue {
+    color: $product-blue-100;
+    background-color: transparent;
+    border: 1px solid $product-blue-100;
+
+    &:hover {
+      color: $product-blue-110;
+      border: 1px solid $product-blue-110;
+    }
+
+    &:focus {
+      color: $product-blue-120;
+      border: 1px solid $product-blue-120;
+    }
+  }
+
+  &.--product-text-blue {
+    color: $product-blue-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $product-blue-110;
+      background: $product-blue-40;
+    }
+
+    &:focus {
+      color: $product-blue-120;
+      background: $product-blue-60;
+    }
+  }
+
+  // End Koltiva’s Product KoltiPay
+
+  // Koltiva’s Product KoltiSkills
+  &.--product-brown {
+    color: $black-00;
+    background-color: $product-brown-100;
+    border: none;
+
+    &:hover {
+      background: $product-brown-110;
+    }
+
+    &:focus {
+      background: $product-brown-120;
+    }
+  }
+
+  &.--product-outline-brown {
+    color: $product-brown-100;
+    background-color: transparent;
+    border: 1px solid $product-brown-100;
+
+    &:hover {
+      color: $product-brown-110;
+      border: 1px solid $product-brown-110;
+    }
+
+    &:focus {
+      color: $product-brown-120;
+      border: 1px solid $product-brown-120;
+    }
+  }
+
+  &.--product-text-brown {
+    color: $product-brown-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $product-brown-110;
+      background: $product-brown-40;
+    }
+
+    &:focus {
+      color: $product-brown-120;
+      background: $product-brown-60;
+    }
+  }
+
+  // End Koltiva’s Product KoltiSkills
+
+  // Accent Success
+  &.--accent-success {
+    color: $black-00;
+    background-color: $accent-success-100;
+    border: none;
+
+    &:hover {
+      background: $accent-success-110;
+    }
+
+    &:focus {
+      background: $accent-success-120;
+    }
+  }
+
+  &.--accent-outline-success {
+    color: $accent-success-100;
+    background-color: transparent;
+    border: 1px solid $accent-success-100;
+
+    &:hover {
+      color: $accent-success-110;
+      border: 1px solid $accent-success-110;
+    }
+
+    &:focus {
+      color: $accent-success-120;
+      border: 1px solid $accent-success-120;
+    }
+  }
+
+  &.--accent-text-success {
+    color: $accent-success-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $accent-success-110;
+      background: $accent-success-40;
+    }
+
+    &:focus {
+      color: $accent-success-120;
+      background: $accent-success-60;
+    }
+  }
+
+  // End Accent Success
+
+  // Accent Info
+  &.--accent-info {
+    color: $black-00;
+    background-color: $accent-info-100;
+    border: none;
+
+    &:hover {
+      background: $accent-info-110;
+    }
+
+    &:focus {
+      background: $accent-info-120;
+    }
+  }
+
+  &.--accent-outline-info {
+    color: $accent-info-100;
+    background-color: transparent;
+    border: 1px solid $accent-info-100;
+
+    &:hover {
+      color: $accent-info-110;
+      border: 1px solid $accent-info-110;
+    }
+
+    &:focus {
+      color: $accent-info-120;
+      border: 1px solid $accent-info-120;
+    }
+  }
+
+  &.--accent-text-info {
+    color: $accent-info-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $accent-info-110;
+      background: $accent-info-40;
+    }
+
+    &:focus {
+      color: $accent-info-120;
+      background: $accent-info-60;
+    }
+  }
+
+  // End Accent Info
+
+  // Accent Warning
+  &.--accent-warning {
+    color: $black-00;
+    background-color: $accent-warning-100;
+    border: none;
+
+    &:hover {
+      background: $accent-warning-110;
+    }
+
+    &:focus {
+      background: $accent-warning-120;
+    }
+  }
+
+  &.--accent-outline-warning {
+    color: $accent-warning-100;
+    background-color: transparent;
+    border: 1px solid $accent-warning-100;
+
+    &:hover {
+      color: $accent-warning-110;
+      border: 1px solid $accent-warning-110;
+    }
+
+    &:focus {
+      color: $accent-warning-120;
+      border: 1px solid $accent-warning-120;
+    }
+  }
+
+  &.--accent-text-warning {
+    color: $accent-warning-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $accent-warning-110;
+      background: $accent-warning-40;
+    }
+
+    &:focus {
+      color: $accent-warning-120;
+      background: $accent-warning-60;
+    }
+  }
+
+  // End Accent Warning
+
+  // Accent Danger
+  &.--accent-danger {
+    color: $black-00;
+    background-color: $accent-danger-100;
+    border: none;
+
+    &:hover {
+      background: $accent-danger-110;
+    }
+
+    &:focus {
+      background: $accent-danger-120;
+    }
+  }
+
+  &.--accent-outline-danger {
+    color: $accent-danger-100;
+    background-color: transparent;
+    border: 1px solid $accent-danger-100;
+
+    &:hover {
+      color: $accent-danger-110;
+      border: 1px solid $accent-danger-110;
+    }
+
+    &:focus {
+      color: $accent-danger-120;
+      border: 1px solid $accent-danger-120;
+    }
+  }
+
+  &.--accent-text-danger {
+    color: $accent-danger-100;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $accent-danger-110;
+      background: $accent-danger-40;
+    }
+
+    &:focus {
+      color: $accent-danger-120;
+      background: $accent-danger-60;
+    }
+  }
+
+  // End Accent Danger
+
+  // Size
+  &.--extra-large {
+    min-width: 114px;
+    height: 56px;
+    padding: 14px;
+    font-size: 22px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &.icon-only {
+      min-width: 56px;
+      max-width: 56px;
+      min-height: 56px;
+      max-height: 56px;
+      padding: 0;
+    }
+  }
+
+  &.--large {
+    min-width: 96px;
+    height: 48px;
+    padding: 14px;
+    font-size: 16px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.icon-only {
+      min-width: 48px;
+      max-width: 48px;
+      min-height: 48px;
+      max-height: 48px;
+      padding: 0;
+    }
+  }
+
+  &.--medium {
+    min-width: 80px;
+    height: 40px;
+    padding: 10px;
+    font-size: 14px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &.icon-only {
+      min-width: 40px;
+      max-width: 40px;
+      min-height: 40px;
+      max-height: 40px;
+      padding: 0;
+    }
+  }
+
+  &.--small {
+    height: 32px;
+    padding: 8px;
+    font-size: 12px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    &.icon-only {
+      min-width: 32px;
+      max-width: 32px;
+      min-height: 32px;
+      max-height: 32px;
+      padding: 0;
+    }
+  }
+
+  // End Size
+}

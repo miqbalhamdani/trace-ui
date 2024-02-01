@@ -1,0 +1,192 @@
+@import "@/assets/scss/style";
+
+.progress {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.--small {
+    height: 6px;
+    font-size: 0;
+    border-radius: 3px;
+
+    .progress-bar {
+      height: 100%;
+      border-radius: 3px;
+    }
+  }
+
+  &.--medium {
+    height: 10px;
+    font-size: 8px;
+    font-weight: 500;
+    color: $black-00;
+    letter-spacing: 0.032px;
+    border-radius: 5px;
+
+    .progress-bar {
+      height: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  &.--large {
+    display: flex;
+    align-items: center;
+    height: 14px;
+    font-size: 10px;
+    font-weight: 700;
+    color: $black-00;
+    letter-spacing: 0.04px;
+    vertical-align: middle;
+    border-radius: 7px;
+
+    .progress-bar {
+      height: 100%;
+      border-radius: 7px;
+    }
+  }
+
+  &.--general {
+    background-color: $product-green-40;
+
+    .progress-bar {
+      &.--contextual {
+        background-color: $product-green-100;
+      }
+
+      &.--striped {
+        background: repeating-linear-gradient(
+          45deg,
+          $product-green-100,
+          $product-green-100 3%,
+          $product-green-70 3%,
+          $product-green-70 5%
+        );
+      }
+
+      &.--animated {
+        background-size: 75% 150%;
+        animation: move-background 20s linear infinite;
+      }
+    }
+  }
+
+  &.--info {
+    background-color: $accent-info-40;
+
+    .progress-bar {
+      &.--contextual {
+        background-color: $accent-info-100;
+      }
+
+      &.--striped {
+        background: repeating-linear-gradient(
+          45deg,
+          $accent-info-100,
+          $accent-info-100 3%,
+          $accent-info-70 3%,
+          $accent-info-70 5%
+        );
+      }
+
+      &.--animated {
+        background-size: 75% 150%;
+        animation: move-background 20s linear infinite;
+      }
+    }
+  }
+
+  &.--warning {
+    background-color: $accent-warning-40;
+
+    .progress-bar {
+      &.--contextual {
+        background-color: $accent-warning-100;
+      }
+
+      &.--striped {
+        background: repeating-linear-gradient(
+          45deg,
+          $accent-warning-100,
+          $accent-warning-100 3%,
+          $accent-warning-70 3%,
+          $accent-warning-70 5%
+        );
+
+        &.--animated {
+          background-size: 75% 150%;
+          animation: move-background 20s linear infinite;
+        }
+      }
+    }
+  }
+
+  &.--error {
+    background-color: $accent-danger-40;
+
+    .progress-bar {
+      &.--contextual {
+        background-color: $accent-danger-100;
+      }
+
+      &.--striped {
+        background: repeating-linear-gradient(
+          45deg,
+          $accent-danger-100,
+          $accent-danger-100 3%,
+          $accent-danger-70 3%,
+          $accent-danger-70 5%
+        );
+      }
+
+      &.--animated {
+        background-size: 75% 150%;
+        animation: move-background 20s linear infinite;
+      }
+    }
+  }
+
+  &.--success {
+    background-color: $accent-success-40;
+
+    .progress-bar {
+      &.--contextual {
+        background-color: $accent-success-100;
+      }
+
+      &.--striped {
+        background: repeating-linear-gradient(
+          45deg,
+          $accent-success-100,
+          $accent-success-100 3%,
+          $accent-success-70 3%,
+          $accent-success-70 5%
+        );
+      }
+
+      &.--animated {
+        background-size: 75% 150%;
+        animation: move-background 20s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes move-background {
+  0% {
+    background-position: 150% 0;
+  }
+
+  100% {
+    background-position: -150% 0;
+  }
+}

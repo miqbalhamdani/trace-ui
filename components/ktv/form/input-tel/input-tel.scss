@@ -1,0 +1,223 @@
+@import "@/assets/scss/style";
+
+.ktv-input-tel {
+  width: 100%;
+  max-width: 250px;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 4px 8px;
+
+    label {
+      font-size: 14px;
+      font-weight: 400;
+      color: $black-100;
+      text-transform: capitalize;
+      letter-spacing: 0.1px;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: $black-50;
+    }
+  }
+
+  .select-menu {
+    position: relative;
+    top: 0;
+    width: auto;
+    min-width: fit-content;
+    max-width: 105px;
+
+    .select-btn {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      padding: 0 10px;
+      font-size: 14px;
+      font-weight: 400;
+      color: $black-100;
+      cursor: pointer;
+      background: $black-20;
+      border-radius: 8px 0 0 8px;
+
+      .tabler-icon-chevron-down {
+        min-width: 18px;
+        max-width: 18px;
+        min-height: 18px;
+        max-height: 18px;
+        transition: 0.3s;
+      }
+
+      span:nth-child(1) {
+        margin-right: 5px;
+      }
+    }
+
+    .options {
+      position: absolute;
+      display: none;
+      width: 100%;
+      min-width: 130px;
+      max-width: 130px;
+      height: 400px;
+      padding: 0;
+      margin-block-end: 0;
+      margin-top: 4px;
+      overflow: hidden;
+      overflow-y: auto;
+      background: $black-00;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px 0 rgba($color: $black-100, $alpha: 12%);
+
+      .option {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+        background: $black-00;
+
+        &:hover {
+          background: $black-20;
+        }
+
+        .flag {
+          margin-right: 10px;
+        }
+
+        .option-text {
+          font-size: 14px;
+          color: $black-80;
+        }
+      }
+    }
+
+    &.active {
+      .select-btn .tabler-icon-chevron-down {
+        transform: rotate(-180deg);
+      }
+
+      .options {
+        display: block;
+      }
+    }
+  }
+
+  .helper-text {
+    display: block;
+    margin: 4px 4px 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: $black-60;
+    letter-spacing: 0.4px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .input {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 0 10px 0 0;
+    border-radius: 8px;
+    outline: 1px solid $black-40;
+    transition: outline 0.1s ease-in-out;
+
+    svg {
+      min-width: 16px;
+      max-width: 16px;
+      min-height: 16px;
+      max-height: 16px;
+    }
+
+    .tabler-icon-alert-triangle-filled {
+      color: $accent-danger-100;
+    }
+
+    .icon-close {
+      color: $black-50;
+      cursor: pointer;
+
+      &:hover {
+        color: $black-100;
+      }
+    }
+
+    .tabler-icon-search {
+      color: $black-100;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      padding: 0;
+      border: none;
+      outline: none;
+
+      &::placeholder {
+        color: $black-40;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &:hover {
+      border-color: $black-50;
+    }
+
+    &.is-focused {
+      outline: 2px solid $accent-info-100;
+
+      .icon-close {
+        display: flex;
+      }
+    }
+
+    &.is-error {
+      outline: 2px solid $accent-danger-100;
+
+      .icon-close {
+        display: flex;
+      }
+
+      ~ .helper-text {
+        color: $accent-danger-100;
+      }
+    }
+
+    &.is-disabled,
+    &.is-readonly {
+      cursor: no-drop;
+      background-color: $black-20;
+      outline: 1px solid $black-30;
+
+      input:disabled,
+      input:read-only {
+        cursor: no-drop;
+        background-color: $black-20;
+      }
+
+      ~ .helper-text {
+        color: $black-60;
+      }
+
+      .select-menu {
+        .select-btn {
+          cursor: no-drop;
+          outline: 1px solid $black-30;
+        }
+      }
+    }
+  }
+}

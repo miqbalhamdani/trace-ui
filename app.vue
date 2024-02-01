@@ -22,7 +22,7 @@ import menus from "@/json/sidebar.json";
         />
         <div class="content-ds">
           <NuxtLoadingIndicator />
-          Koltiva Indonesia
+          <NuxtPage />
         </div>
       </div>
     </div>

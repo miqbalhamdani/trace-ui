@@ -7,22 +7,26 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 ### Highest Priority
 
 - [ ] Alert
-- [ ] Button
-- [ ] Cart
+- [x] Button
+- [ ] Card
 - [ ] Checkbox
 - [ ] Select Box / Combobox
 - [ ] Datepicker
 - [ ] Table
-- [ ] Input
-- [ ] Label
+- [x] Input
+- [x] Input Dropdown
+- [x] Input Select
+- [x] Input Telephone
+- [x] Textarea
+- [x] Link
+- [x] Label / Typography
 - [ ] Pagination
-- [ ] Textarea
 
 ### High Priority
 
 - [ ] Alert Dialog
 - [ ] Dialog / Modal
-- [ ] Radio Group
+- [x] Radio Group
 - [ ] Tabs
 - [ ] Toast
 
@@ -30,10 +34,12 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 - [ ] Accordion
 - [ ] Badge
-- [ ] Loading / Progress
+- [x] Progress Bar
+- [x] Loading / Spinner
 - [ ] Skeleton
 - [ ] Switch
 - [ ] Tooltip
+- [ ] Icon
 
 ## Setup
 
