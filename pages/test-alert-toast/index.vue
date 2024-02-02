@@ -1,9 +1,4 @@
 <script setup>
-import KtvAlert from "~/components/alert/Alert.vue";
-import KtvButton from "~/components/button/Button.vue";
-import KtvToast from "~/components/toast/Toast.vue";
-import KtvToastGroup from "~/components/toast/ToastGroup.vue";
-
 // Toast Info
 const toastsInfo = ref([]);
 const toastTypes = ["info", "warning", "error", "success"];

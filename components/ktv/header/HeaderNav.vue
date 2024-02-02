@@ -183,7 +183,7 @@ const closeGroup = (item: Navigations) => {
       height: 12px;
       color: $color-white;
       content: "";
-      background-image: url("~/assets/icon/check.svg");
+      background-image: url("~/assets/icons/check.svg");
       background-size: cover;
       transform: translate(-50%, -50%);
     }

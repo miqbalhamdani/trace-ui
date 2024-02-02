@@ -1,9 +1,4 @@
 <script setup>
-import KtvCheckbox from "~/components/checkbox/Checkbox.vue";
-import KtvFormGroup from "~/components/form-group/FormGroup.vue";
-import KtvRadio from "~/components/radio/Radio.vue";
-import KtvSwitch from "~/components/switch/Switch.vue";
-
 const radioButton = ref("");
 const dataRadioButton = [
   { value: "bmw", label: "BMW" },

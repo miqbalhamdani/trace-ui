@@ -1,8 +1,3 @@
-<script setup>
-import KtvProgressBar from "~/components/progress/progress-bar/ProgressBar.vue";
-import KtvSpinner from "~/components/progress/spinner/Spinner.vue";
-</script>
-
 <template>
   <div style="display: flex; gap: 24px">
     <KtvProgressBar

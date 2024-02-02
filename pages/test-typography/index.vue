@@ -1,7 +1,3 @@
-<script setup>
-import KtvTypography from "~/components/typography/Typography.vue";
-</script>
-
 <template>
   <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 2rem; text-align: center">
     <KtvTypography

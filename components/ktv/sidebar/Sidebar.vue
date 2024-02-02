@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { IconArrowNarrowUp, IconChevronRight, IconInfoCircle } from "@tabler/icons-vue";
 
-import { type MenuInterface } from "@/json/sidebarInterface";
+import { type MenuInterface } from "./sidebar.interface";
 const props = defineProps<{
   menus: MenuInterface[];
 }>();

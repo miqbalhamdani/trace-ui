@@ -1,7 +1,3 @@
-<script setup>
-import KtvButton from "~/components/button/Button.vue";
-</script>
-
 <template>
   <div style="display: flex; flex-direction: column; gap: 24px">
     <div class="d-flex">

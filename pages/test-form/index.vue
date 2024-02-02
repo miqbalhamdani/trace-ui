@@ -1,10 +1,4 @@
 <script setup>
-import KtvInput from "~/components/form/input/Input.vue";
-import KtvInputDropdown from "~/components/form/input-dropdown/InputDropdown.vue";
-import KtvInputSelect from "~/components/form/input-select/InputSelect.vue";
-import KtvInputTel from "~/components/form/input-tel/InputTel.vue";
-import KtvTextArea from "~/components/form/textarea/Textarea.vue";
-
 const textField = ref("");
 function validateRule(value) {
   if (!value) {

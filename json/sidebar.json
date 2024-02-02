@@ -119,5 +119,65 @@
     "icon": "maps.svg",
     "childs": [],
     "url": "training-coaching"
+  },
+  {
+    "name": "Design System",
+    "type": "title"
+  },
+  {
+    "id": 6,
+    "name": "Test Alert Toasts",
+    "type": "body",
+    "icon": "maps.svg",
+    "url": "/test-alert-toast"
+  },
+  {
+    "id": 7,
+    "name": "Test Button",
+    "type": "body",
+    "icon": "maps.svg",
+    "url": "/test-button"
+  },
+  {
+    "id": 8,
+    "name": "Test Chips",
+    "type": "body",
+    "icon": "maps.svg",
+    "url": "/test-chips"
+  },
+  {
+    "id": 9,
+    "name": "Test Form",
+    "type": "body",
+    "icon": "maps.svg",
+    "url": "/test-form"
+  },
+  {
+    "id": 10,
+    "name": "Test Link",
+    "type": "body",
+    "icon": "maps.svg",
+    "url": "/test-link"
+  },
+  {
+    "id": 11,
+    "name": "Test Progress",
+    "type": "body",
+    "icon": "maps.svg",
+    "url": "/test-progress"
+  },
+  {
+    "id": 12,
+    "name": "Test Radio",
+    "type": "body",
+    "icon": "maps.svg",
+    "url": "/test-radio"
+  },
+  {
+    "id": 13,
+    "name": "Test Typography",
+    "type": "body",
+    "icon": "maps.svg",
+    "url": "/test-typography"
   }
 ]

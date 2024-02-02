@@ -4,7 +4,30 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Todo
 
-### Highest Priority
+## Fixing
+
+1. remove @tabler/icons-vue in all component (high)
+2. check vee-validate (iqbal)
+3. check @import "@/assets/scss/style"; import in all component scss. (iqbal)
+4. check flag icon and i18n-iso-countries dependency. (iqbal)
+5. update variable countryTelephoneCodes into json file InputTel (medium)
+6. re adding tippy in sidebar (medium)
+7. remove all comment (medium)
+8. adjust tooltip shadcn-vue tooltip to existing design. then change tippy tooltip to shadcn-vue tooltip (future)
+
+Iqbal: will check first before fixing
+Priority: (high, medium, low)
+Futur: will be fixed in a couple of months
+
+## Report
+
+to check performance of bundle
+
+```
+pnpm run reports
+```
+
+### High Priority
 
 - [x] Alert
 - [x] Button
@@ -22,7 +45,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 - [x] Label / Typography
 - [ ] Pagination
 
-### High Priority
+### Medium Priority
 
 - [ ] Alert Dialog
 - [ ] Dialog / Modal
@@ -30,7 +53,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 - [ ] Tabs
 - [x] Toast
 
-### Medium Priority
+### Low Priority
 
 - [ ] Accordion
 - [ ] Badge

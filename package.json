@@ -11,7 +11,8 @@
     "lint:style": "stylelint --fix \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
     "lint": "pnpm run lint:eslint && pnpm run lint:style",
     "prepare": "husky install",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "reports": "npx nuxi analyze"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --fix",

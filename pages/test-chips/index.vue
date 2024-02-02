@@ -1,7 +1,3 @@
-<script setup>
-import KtvChips from "~/components/chips/Chips.vue";
-</script>
-
 <template>
   <div style="display: flex; flex-direction: column; gap: 24px">
     <div class="d-flex">
