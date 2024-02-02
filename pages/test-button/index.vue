@@ -1,4 +1,5 @@
 <script setup>
+import { IconHome } from "@tabler/icons-vue";
 import KtvButton from "~/components/button/Button.vue";
 </script>
 
@@ -12,8 +13,11 @@ import KtvButton from "~/components/button/Button.vue";
       <KtvButton
         size="small"
         label="nastar"
-        left-icon="IconHome"
-      ></KtvButton>
+      >
+        <template #left-icon>
+          <IconHome />
+        </template>
+      </KtvButton>
       <KtvButton
         size="small"
         label="nastar"
